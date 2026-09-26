@@ -14,6 +14,11 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 # The app is served from a subfolder; building without this breaks every link and image.
 PREFIX="${APP_PATH_PREFIX:-lms-mentor}"
 
+# The default `node` on the box is 20; the build tooling needs 22.
+if [ -x /opt/cpanel/ea-nodejs22/bin/node ]; then
+    export PATH="/opt/cpanel/ea-nodejs22/bin:$PATH"
+fi
+
 echo "==> Pulling $(git branch --show-current)"
 # --ff-only: stops instead of merging if someone hand-edited tracked files on the server.
 git pull --ff-only
@@ -24,7 +29,7 @@ composer install --no-interaction --no-progress --optimize-autoloader
 echo "==> Migrating"
 php artisan migrate --force
 
-echo "==> Building frontend for /$PREFIX"
+echo "==> Building frontend for /$PREFIX (node $(node -v))"
 npm ci --no-audit --no-fund
 APP_PATH_PREFIX="$PREFIX" npm run build
 
