@@ -38,7 +38,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useInitials } from '@/hooks/use-initials';
 import { useTranslation } from '@/hooks/use-translation';
-import { register } from '@/routes';
 import attemptRoutes from '@/routes/exams/attempts';
 import {
     certificate as examCertificate,

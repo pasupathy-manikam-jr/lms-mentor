@@ -83,7 +83,7 @@ export default function MyCourses({
                                         )}
                                         <CardContent className="space-y-3 py-4">
                                             <div>
-                                                <p className="font-semibold leading-snug">
+                                                <p className="leading-snug font-semibold">
                                                     {item.course.title}
                                                 </p>
                                                 {item.course.instructor && (

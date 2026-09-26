@@ -81,12 +81,6 @@ export type AdminNavItem = {
     items?: AdminNavLink[];
 };
 
-// Sections not built yet open the "being built" page at /dashboard/{slug}; see AdminSectionController::SECTIONS.
-const link = (title: string, slug: string): AdminNavLink => ({
-    title,
-    href: adminSection.url(slug),
-});
-
 /**
  * The admin sidebar menu, in the Mentor demo's order. Titles are English keys, translated where rendered.
  */

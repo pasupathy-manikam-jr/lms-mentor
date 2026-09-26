@@ -22,7 +22,12 @@ import { cn } from '@/lib/utils';
 import lessons from '@/routes/admin/courses/lessons';
 
 export type LessonContentType =
-    'video' | 'video_url' | 'document' | 'image' | 'text' | 'embed';
+    | 'video'
+    | 'video_url'
+    | 'document'
+    | 'image'
+    | 'text'
+    | 'embed';
 
 /** A lesson as the editor receives it; see CourseController::edit(). */
 export type EditableLesson = {

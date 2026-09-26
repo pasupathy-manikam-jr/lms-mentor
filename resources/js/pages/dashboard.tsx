@@ -22,7 +22,11 @@ import payouts from '@/routes/admin/billing/payouts';
 import instructorPayouts from '@/routes/instructor/payouts';
 
 type CourseStatusName =
-    'approved' | 'upcoming' | 'pending' | 'private' | 'draft';
+    | 'approved'
+    | 'upcoming'
+    | 'pending'
+    | 'private'
+    | 'draft';
 
 type DashboardProps = {
     /** Instructors see the same overview for their own courses. */

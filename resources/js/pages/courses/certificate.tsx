@@ -52,7 +52,7 @@ export default function CourseCertificate({
                         colors={template.colors}
                         content={template.content}
                         data={data}
-                        className="rounded-lg shadow-lg print:rounded-none [print-color-adjust:exact]"
+                        className="rounded-lg shadow-lg [print-color-adjust:exact] print:rounded-none"
                     />
                 </div>
             </div>

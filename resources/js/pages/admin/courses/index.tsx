@@ -152,7 +152,7 @@ export default function ManageCourses({
                                 }}
                             >
                                 <Search
-                                    className="absolute top-1/2 start-3 size-4 -translate-y-1/2 text-muted-foreground"
+                                    className="absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
                                     aria-hidden
                                 />
                                 <Input

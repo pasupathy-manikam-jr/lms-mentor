@@ -16,7 +16,6 @@ import type { FormEvent } from 'react';
 import { SortDialog } from '@/components/admin/course-curriculum';
 import { RichTextEditor } from '@/components/admin/rich-text-editor';
 import InputError from '@/components/input-error';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
@@ -287,13 +286,10 @@ export function ExamQuestions({
                             <Button
                                 variant="destructive"
                                 onClick={() =>
-                                    router.delete(
-                                        urls.destroy(deleting.id),
-                                        {
-                                            ...visit,
-                                            onSuccess: () => setDeleting(null),
-                                        },
-                                    )
+                                    router.delete(urls.destroy(deleting.id), {
+                                        ...visit,
+                                        onSuccess: () => setDeleting(null),
+                                    })
                                 }
                             >
                                 {t('Delete')}

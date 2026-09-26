@@ -10,7 +10,6 @@ import { Field } from '@/components/admin/course-form';
 import { RichTextEditor } from '@/components/admin/rich-text-editor';
 import { TagInput } from '@/components/admin/tag-input';
 import { sentenceCase } from '@/components/landing/job-meta';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
     Card,

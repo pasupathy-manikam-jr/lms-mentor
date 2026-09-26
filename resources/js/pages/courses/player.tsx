@@ -62,7 +62,12 @@ import { certificate, finish, learn } from '@/routes/courses';
 import { complete as completeLesson } from '@/routes/courses/learn';
 
 type ContentType =
-    'video' | 'video_url' | 'document' | 'image' | 'text' | 'embed';
+    | 'video'
+    | 'video_url'
+    | 'document'
+    | 'image'
+    | 'text'
+    | 'embed';
 
 type Item = {
     id: number;

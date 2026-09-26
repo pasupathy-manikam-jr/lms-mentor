@@ -1,4 +1,4 @@
-import { Head, Link, usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import {
     Award,
     Flower2,
@@ -302,7 +302,7 @@ export default function Welcome({
                                 )}
                             </p>
                             <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-                                <div className="flex w-max motion-safe:animate-marquee group-hover:[animation-play-state:paused]">
+                                <div className="flex w-max group-hover:[animation-play-state:paused] motion-safe:animate-marquee">
                                     {[0, 1].map((copy) => (
                                         <ul
                                             key={copy}
@@ -479,7 +479,7 @@ export default function Welcome({
                                             {/* The stretched link makes the whole tile clickable. */}
                                             <Link
                                                 href={teamShow.url(person.id)}
-                                                className="after:absolute after:inset-0 group-hover:underline"
+                                                className="group-hover:underline after:absolute after:inset-0"
                                             >
                                                 {person.name}
                                             </Link>

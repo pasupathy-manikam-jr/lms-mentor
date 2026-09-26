@@ -17,12 +17,20 @@ export default function QuizQuestions({
     questions,
 }: {
     course: { id: number; title: string };
-    quiz: { id: number; title: string; total_mark: number | null; pass_mark: number | null };
+    quiz: {
+        id: number;
+        title: string;
+        total_mark: number | null;
+        pass_mark: number | null;
+    };
     questions: ExamQuestion[];
 }) {
     const { t } = useTranslation();
     const route = { course: course.id, lesson: quiz.id };
-    const total = questions.reduce((sum, question) => sum + Number(question.marks), 0);
+    const total = questions.reduce(
+        (sum, question) => sum + Number(question.marks),
+        0,
+    );
 
     setLayoutProps({
         breadcrumbs: [
@@ -39,26 +47,38 @@ export default function QuizQuestions({
             <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                        <h1 className="text-2xl font-semibold tracking-tight">{quiz.title}</h1>
+                        <h1 className="text-2xl font-semibold tracking-tight">
+                            {quiz.title}
+                        </h1>
                         <p className="text-sm text-muted-foreground">
                             {t('Pass mark :pass of :total marks', {
                                 pass: String(quiz.pass_mark ?? total),
                                 total: String(total),
                             })}
-                            {quiz.total_mark !== null && quiz.total_mark !== total && (
-                                <span className="text-amber-600">
-                                    {' '}
-                                    ·{' '}
-                                    {t('The quiz says :expected marks in total; the questions add up to :total.', {
-                                        expected: String(quiz.total_mark),
-                                        total: String(total),
-                                    })}
-                                </span>
-                            )}
+                            {quiz.total_mark !== null &&
+                                quiz.total_mark !== total && (
+                                    <span className="text-amber-600">
+                                        {' '}
+                                        ·{' '}
+                                        {t(
+                                            'The quiz says :expected marks in total; the questions add up to :total.',
+                                            {
+                                                expected: String(
+                                                    quiz.total_mark,
+                                                ),
+                                                total: String(total),
+                                            },
+                                        )}
+                                    </span>
+                                )}
                         </p>
                     </div>
                     <Button variant="outline" asChild>
-                        <Link href={edit.url(course.id, { query: { tab: 'curriculum' } })}>
+                        <Link
+                            href={edit.url(course.id, {
+                                query: { tab: 'curriculum' },
+                            })}
+                        >
                             <ArrowLeft />
                             {t('Back to curriculum')}
                         </Link>
@@ -68,8 +88,16 @@ export default function QuizQuestions({
                     <ExamQuestions
                         urls={{
                             store: quizQuestions.store.url(route),
-                            update: (id) => quizQuestions.update.url({ ...route, question: id }),
-                            destroy: (id) => quizQuestions.destroy.url({ ...route, question: id }),
+                            update: (id) =>
+                                quizQuestions.update.url({
+                                    ...route,
+                                    question: id,
+                                }),
+                            destroy: (id) =>
+                                quizQuestions.destroy.url({
+                                    ...route,
+                                    question: id,
+                                }),
                             sort: quizQuestions.sort.url(route),
                         }}
                         items={questions}

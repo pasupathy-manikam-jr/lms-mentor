@@ -1,1245 +1,989 @@
 {
-  "Ayurveda Fundamentals Certification": [
-    {
-      "type": "multiple_choice",
-      "title": "How many doshas are described in classical Ayurveda?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Two",
-        "Three",
-        "Five",
-        "Seven"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which dosha is described as being composed of the elements space (akasha) and air (vayu)?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Vata",
-        "Pitta",
-        "Kapha",
-        "Ojas"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "How many dhatus (bodily tissues) are described in Ayurveda?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Three",
-        "Five",
-        "Seven",
-        "Nine"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which dhatu is traditionally described as the first to be formed from digested food?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Rakta",
-        "Rasa",
-        "Mamsa",
-        "Majja"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which dosha is associated with transformation, digestion and metabolism?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Kapha",
-        "Vata",
-        "Pitta",
-        "Tridosha"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are the three principal malas (waste products) in Ayurveda?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Purisha (faeces)",
-        "Mutra (urine)",
-        "Shukra (reproductive tissue)",
-        "Sweda (sweat)",
-        "Asthi (bone)"
-      ],
-      "answer": [
-        0,
-        1,
-        3
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which qualities (gunas) are classically attributed to Kapha dosha?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Heavy (guru)",
-        "Cold (shita)",
-        "Mobile (chala)",
-        "Unctuous (snigdha)",
-        "Sharp (tikshna)"
-      ],
-      "answer": [
-        0,
-        1,
-        3
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "Prakriti is a person's ____ constitution, which Ayurveda teaches is established at conception and remains stable through life.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "innate",
-        "inborn",
-        "inherent",
-        "natural"
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Match each dhatu with the tissue it represents",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
+    "Ayurveda Fundamentals Certification": [
         {
-          "left": "Rakta",
-          "right": "Blood"
+            "type": "multiple_choice",
+            "title": "How many doshas are described in classical Ayurveda?",
+            "description": null,
+            "marks": 1,
+            "options": ["Two", "Three", "Five", "Seven"],
+            "answer": [1]
         },
         {
-          "left": "Mamsa",
-          "right": "Muscle"
+            "type": "multiple_choice",
+            "title": "Which dosha is described as being composed of the elements space (akasha) and air (vayu)?",
+            "description": null,
+            "marks": 1,
+            "options": ["Vata", "Pitta", "Kapha", "Ojas"],
+            "answer": [0]
         },
         {
-          "left": "Asthi",
-          "right": "Bone"
+            "type": "multiple_choice",
+            "title": "How many dhatus (bodily tissues) are described in Ayurveda?",
+            "description": null,
+            "marks": 1,
+            "options": ["Three", "Five", "Seven", "Nine"],
+            "answer": [2]
         },
         {
-          "left": "Majja",
-          "right": "Marrow"
+            "type": "multiple_choice",
+            "title": "Which dhatu is traditionally described as the first to be formed from digested food?",
+            "description": null,
+            "marks": 1,
+            "options": ["Rakta", "Rasa", "Mamsa", "Majja"],
+            "answer": [1]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Which dosha is associated with transformation, digestion and metabolism?",
+            "description": null,
+            "marks": 1,
+            "options": ["Kapha", "Vata", "Pitta", "Tridosha"],
+            "answer": [2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are the three principal malas (waste products) in Ayurveda?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Purisha (faeces)",
+                "Mutra (urine)",
+                "Shukra (reproductive tissue)",
+                "Sweda (sweat)",
+                "Asthi (bone)"
+            ],
+            "answer": [0, 1, 3]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which qualities (gunas) are classically attributed to Kapha dosha?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Heavy (guru)",
+                "Cold (shita)",
+                "Mobile (chala)",
+                "Unctuous (snigdha)",
+                "Sharp (tikshna)"
+            ],
+            "answer": [0, 1, 3]
+        },
+        {
+            "type": "fill_blank",
+            "title": "Prakriti is a person's ____ constitution, which Ayurveda teaches is established at conception and remains stable through life.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["innate", "inborn", "inherent", "natural"]
+        },
+        {
+            "type": "matching",
+            "title": "Match each dhatu with the tissue it represents",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                {
+                    "left": "Rakta",
+                    "right": "Blood"
+                },
+                {
+                    "left": "Mamsa",
+                    "right": "Muscle"
+                },
+                {
+                    "left": "Asthi",
+                    "right": "Bone"
+                },
+                {
+                    "left": "Majja",
+                    "right": "Marrow"
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "What is prakriti assessment in Ayurveda, and why is it performed?",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "Prakriti assessment determines a person's individual constitution by evaluating the relative predominance of Vata, Pitta and Kapha through physical features, physiological tendencies and mental traits, typically using observation and structured questioning. Ayurveda uses it as a baseline to distinguish a person's natural state from imbalance (vikriti) and to guide individualised diet, lifestyle and preventive recommendations."
+            ]
         }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "What is prakriti assessment in Ayurveda, and why is it performed?",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "Prakriti assessment determines a person's individual constitution by evaluating the relative predominance of Vata, Pitta and Kapha through physical features, physiological tendencies and mental traits, typically using observation and structured questioning. Ayurveda uses it as a baseline to distinguish a person's natural state from imbalance (vikriti) and to guide individualised diet, lifestyle and preventive recommendations."
-      ]
-    }
-  ],
-  "Siddha Medicine Practitioner Assessment": [
-    {
-      "type": "multiple_choice",
-      "title": "The Siddha system of medicine traditionally developed in which region?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "The Tamil-speaking region of South India",
-        "The Kashmir valley",
-        "Tibet",
-        "Bengal"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "What are the three humours (uyir thathukkal) in Siddha medicine called?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Vatham, Pitham, Kabam",
-        "Rasa, Rakta, Mamsa",
-        "Sattva, Rajas, Tamas",
-        "Yin, Yang, Qi"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "What does the term envagai thervu refer to?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "The five senses test",
-        "The eight methods of clinical examination",
-        "The ten vital airs",
-        "The six tastes"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Neikkuri, the observation of how a drop of gingelly oil spreads on the patient's urine, belongs to which component of envagai thervu?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Naadi",
-        "Moothiram",
-        "Naa",
-        "Vizhi"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "How many tastes (suvai) are recognised in Siddha pharmacology?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Four",
-        "Five",
-        "Six",
-        "Eight"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are among the eight methods of envagai thervu?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Naadi (pulse)",
-        "Vizhi (eyes)",
-        "Moothiram (urine)",
-        "Blood culture",
-        "Swapna (dreams)"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Siddha materia medica traditionally groups raw drugs into which categories?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Mooligai (plant origin)",
-        "Thathu (metals and minerals)",
-        "Jeevam (animal origin)",
-        "Synthetic compounds",
-        "Radiopharmaceuticals"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "According to Siddha theory, the human body is composed of ____ basic principles (thathuvams).",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "96",
-        "ninety-six",
-        "ninety six"
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Match each component of envagai thervu with what is examined",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
+    ],
+    "Siddha Medicine Practitioner Assessment": [
         {
-          "left": "Naa",
-          "right": "Tongue"
+            "type": "multiple_choice",
+            "title": "The Siddha system of medicine traditionally developed in which region?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "The Tamil-speaking region of South India",
+                "The Kashmir valley",
+                "Tibet",
+                "Bengal"
+            ],
+            "answer": [0]
         },
         {
-          "left": "Niram",
-          "right": "Complexion or colour"
+            "type": "multiple_choice",
+            "title": "What are the three humours (uyir thathukkal) in Siddha medicine called?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Vatham, Pitham, Kabam",
+                "Rasa, Rakta, Mamsa",
+                "Sattva, Rajas, Tamas",
+                "Yin, Yang, Qi"
+            ],
+            "answer": [0]
         },
         {
-          "left": "Mozhi",
-          "right": "Voice and speech"
+            "type": "multiple_choice",
+            "title": "What does the term envagai thervu refer to?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "The five senses test",
+                "The eight methods of clinical examination",
+                "The ten vital airs",
+                "The six tastes"
+            ],
+            "answer": [1]
         },
         {
-          "left": "Sparisam",
-          "right": "Touch, including skin temperature and texture"
+            "type": "multiple_choice",
+            "title": "Neikkuri, the observation of how a drop of gingelly oil spreads on the patient's urine, belongs to which component of envagai thervu?",
+            "description": null,
+            "marks": 1,
+            "options": ["Naadi", "Moothiram", "Naa", "Vizhi"],
+            "answer": [1]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "How many tastes (suvai) are recognised in Siddha pharmacology?",
+            "description": null,
+            "marks": 1,
+            "options": ["Four", "Five", "Six", "Eight"],
+            "answer": [2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are among the eight methods of envagai thervu?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Naadi (pulse)",
+                "Vizhi (eyes)",
+                "Moothiram (urine)",
+                "Blood culture",
+                "Swapna (dreams)"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Siddha materia medica traditionally groups raw drugs into which categories?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Mooligai (plant origin)",
+                "Thathu (metals and minerals)",
+                "Jeevam (animal origin)",
+                "Synthetic compounds",
+                "Radiopharmaceuticals"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "fill_blank",
+            "title": "According to Siddha theory, the human body is composed of ____ basic principles (thathuvams).",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["96", "ninety-six", "ninety six"]
+        },
+        {
+            "type": "matching",
+            "title": "Match each component of envagai thervu with what is examined",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                {
+                    "left": "Naa",
+                    "right": "Tongue"
+                },
+                {
+                    "left": "Niram",
+                    "right": "Complexion or colour"
+                },
+                {
+                    "left": "Mozhi",
+                    "right": "Voice and speech"
+                },
+                {
+                    "left": "Sparisam",
+                    "right": "Touch, including skin temperature and texture"
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "Describe the role of Naadi (pulse) examination in Siddha diagnosis.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "Naadi is felt at the radial artery and is regarded as the foremost of the eight methods, reflecting the state of Vatham, Pitham and Kabam. Siddha texts describe their ratio in health as 1 : 1/2 : 1/4, and the practitioner assesses which humour is disturbed. The pulse findings are interpreted together with the other methods of envagai thervu rather than in isolation."
+            ]
         }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "Describe the role of Naadi (pulse) examination in Siddha diagnosis.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "Naadi is felt at the radial artery and is regarded as the foremost of the eight methods, reflecting the state of Vatham, Pitham and Kabam. Siddha texts describe their ratio in health as 1 : 1/2 : 1/4, and the practitioner assesses which humour is disturbed. The pulse findings are interpreted together with the other methods of envagai thervu rather than in isolation."
-      ]
-    }
-  ],
-  "Medical Terminology Proficiency Test": [
-    {
-      "type": "multiple_choice",
-      "title": "What does the prefix tachy- mean?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Slow",
-        "Fast",
-        "Painful",
-        "Under"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "What does the suffix -itis mean?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Surgical removal",
-        "Inflammation",
-        "Study of",
-        "Enlargement"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "The word root nephr/o refers to which organ?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Liver",
-        "Nerve",
-        "Kidney",
-        "Lung"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "What does the abbreviation NPO mean?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Nothing by mouth",
-        "No pain observed",
-        "Normal patient outcome",
-        "Night post-operative"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "What does hepatomegaly mean?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Inflammation of the liver",
-        "Enlargement of the liver",
-        "Removal of the liver",
-        "Pain in the liver"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of these terms describe the surgical removal of an organ or tissue?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Appendectomy",
-        "Tracheotomy",
-        "Cholecystectomy",
-        "Colostomy",
-        "Tonsillectomy"
-      ],
-      "answer": [
-        0,
-        2,
-        4
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of these abbreviations describe how often or when a medicine is given?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "BID",
-        "BP",
-        "PRN",
-        "TID",
-        "ECG"
-      ],
-      "answer": [
-        0,
-        2,
-        3
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "The prefix ____ means below or under, as in hypoglycaemia.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "hypo",
-        "hypo-"
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Match each word root with its meaning",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
+    ],
+    "Medical Terminology Proficiency Test": [
         {
-          "left": "cardi/o",
-          "right": "Heart"
+            "type": "multiple_choice",
+            "title": "What does the prefix tachy- mean?",
+            "description": null,
+            "marks": 1,
+            "options": ["Slow", "Fast", "Painful", "Under"],
+            "answer": [1]
         },
         {
-          "left": "gastr/o",
-          "right": "Stomach"
+            "type": "multiple_choice",
+            "title": "What does the suffix -itis mean?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Surgical removal",
+                "Inflammation",
+                "Study of",
+                "Enlargement"
+            ],
+            "answer": [1]
         },
         {
-          "left": "oste/o",
-          "right": "Bone"
+            "type": "multiple_choice",
+            "title": "The word root nephr/o refers to which organ?",
+            "description": null,
+            "marks": 1,
+            "options": ["Liver", "Nerve", "Kidney", "Lung"],
+            "answer": [2]
         },
         {
-          "left": "derm/o",
-          "right": "Skin"
+            "type": "multiple_choice",
+            "title": "What does the abbreviation NPO mean?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Nothing by mouth",
+                "No pain observed",
+                "Normal patient outcome",
+                "Night post-operative"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "What does hepatomegaly mean?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Inflammation of the liver",
+                "Enlargement of the liver",
+                "Removal of the liver",
+                "Pain in the liver"
+            ],
+            "answer": [1]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of these terms describe the surgical removal of an organ or tissue?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Appendectomy",
+                "Tracheotomy",
+                "Cholecystectomy",
+                "Colostomy",
+                "Tonsillectomy"
+            ],
+            "answer": [0, 2, 4]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of these abbreviations describe how often or when a medicine is given?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": ["BID", "BP", "PRN", "TID", "ECG"],
+            "answer": [0, 2, 3]
+        },
+        {
+            "type": "fill_blank",
+            "title": "The prefix ____ means below or under, as in hypoglycaemia.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["hypo", "hypo-"]
+        },
+        {
+            "type": "matching",
+            "title": "Match each word root with its meaning",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                {
+                    "left": "cardi/o",
+                    "right": "Heart"
+                },
+                {
+                    "left": "gastr/o",
+                    "right": "Stomach"
+                },
+                {
+                    "left": "oste/o",
+                    "right": "Bone"
+                },
+                {
+                    "left": "derm/o",
+                    "right": "Skin"
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "Break the term gastroenteritis into its word parts and explain its meaning.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "Gastroenteritis is made up of gastr/o (stomach), enter/o (intestine) and the suffix -itis (inflammation). Together it means inflammation of the stomach and intestines, a condition commonly presenting with vomiting and diarrhoea."
+            ]
         }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "Break the term gastroenteritis into its word parts and explain its meaning.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "Gastroenteritis is made up of gastr/o (stomach), enter/o (intestine) and the suffix -itis (inflammation). Together it means inflammation of the stomach and intestines, a condition commonly presenting with vomiting and diarrhoea."
-      ]
-    }
-  ],
-  "Clinical Pharmacology Knowledge Exam": [
-    {
-      "type": "multiple_choice",
-      "title": "Bioavailability is best defined as:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "The fraction of an administered dose that reaches the systemic circulation unchanged",
-        "The time taken for plasma concentration to halve",
-        "The volume of plasma cleared of drug per unit time",
-        "The maximum effect a drug can produce"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "With regular repeated dosing, approximately how many half-lives does it take to reach steady-state plasma concentration?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "1",
-        "2",
-        "4 to 5",
-        "10 to 12"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "A drug that binds reversibly to the same receptor site as the agonist without activating it, shifting the agonist dose-response curve to the right, is a:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Full agonist",
-        "Partial agonist",
-        "Competitive antagonist",
-        "Inverse agonist"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "A drug with a narrow therapeutic index is one where:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "There is a small margin between effective and toxic concentrations",
-        "The drug has a very short half-life",
-        "The drug is only effective intravenously",
-        "The drug has no known adverse effects"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Grapefruit juice can increase plasma levels of some drugs mainly by inhibiting which enzyme?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "CYP3A4",
-        "CYP2D6",
-        "Monoamine oxidase",
-        "Acetylcholinesterase"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following drugs have a narrow therapeutic index and commonly require monitoring?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Warfarin",
-        "Lithium",
-        "Amoxicillin",
-        "Digoxin",
-        "Loratadine"
-      ],
-      "answer": [
-        0,
-        1,
-        3
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are principles of safe prescribing?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Check the patient's allergy history",
-        "Consider renal and hepatic function",
-        "Review current medicines for potential interactions",
-        "Abbreviate units as U to save space",
-        "Omit the indication from the prescription"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "The ____ effect is the metabolism of an orally administered drug by the gut wall and liver before it reaches the systemic circulation.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "first-pass",
-        "first pass",
-        "presystemic"
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Put the stages of pharmacokinetics in the order a drug passes through them",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
-        "Absorption",
-        "Distribution",
-        "Metabolism",
-        "Excretion"
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "Explain how an enzyme-inducing drug can cause a clinically important interaction, using an example.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "Enzyme inducers such as rifampicin increase the synthesis of hepatic CYP enzymes, speeding the metabolism of other drugs and lowering their plasma concentrations. For example, rifampicin can reduce the effectiveness of combined oral contraceptives, so an alternative or additional contraceptive method is needed. The effect develops over days and can persist for weeks after the inducer is stopped."
-      ]
-    }
-  ],
-  "Healthcare Quality Management Exam": [
-    {
-      "type": "multiple_choice",
-      "title": "Donabedian's framework for assessing the quality of care consists of:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Structure, process and outcome",
-        "Plan, do, study and act",
-        "Input, throughput and output",
-        "Safety, cost and access"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "In the PDSA model for improvement, what does the S stand for?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Standardise",
-        "Study",
-        "Sustain",
-        "Supervise"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which organisation accredits healthcare organisations internationally and publishes the International Patient Safety Goals?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Joint Commission International",
-        "National Institute for Health and Care Excellence",
-        "Centers for Disease Control and Prevention",
-        "World Medical Association"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "The primary purpose of a root cause analysis after an adverse event is to:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Identify underlying system factors so recurrence can be prevented",
-        "Identify the individual responsible for disciplinary action",
-        "Calculate the financial cost of the event",
-        "Satisfy insurance reporting requirements only"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "The Swiss cheese model of accident causation was proposed by:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "James Reason",
-        "W. Edwards Deming",
-        "Avedis Donabedian",
-        "Joseph Juran"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are outcome indicators?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Hospital-acquired infection rate",
-        "Nurse-to-patient ratio",
-        "30-day unplanned readmission rate",
-        "Risk-adjusted inpatient mortality",
-        "Percentage of patients receiving prophylaxis before surgery"
-      ],
-      "answer": [
-        0,
-        2,
-        3
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are commonly used continuous quality improvement tools?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Pareto chart",
-        "Fishbone (Ishikawa) diagram",
-        "Run chart",
-        "Value stream mapping",
-        "Staff disciplinary policy"
-      ],
-      "answer": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "In failure mode and effects analysis (FMEA), the risk priority number is calculated by multiplying severity, occurrence and ____.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "detection",
-        "detectability",
-        "detection rating"
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Match each Institute of Medicine quality aim with its meaning",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
+    ],
+    "Clinical Pharmacology Knowledge Exam": [
         {
-          "left": "Safe",
-          "right": "Avoiding harm to patients from care intended to help them"
+            "type": "multiple_choice",
+            "title": "Bioavailability is best defined as:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "The fraction of an administered dose that reaches the systemic circulation unchanged",
+                "The time taken for plasma concentration to halve",
+                "The volume of plasma cleared of drug per unit time",
+                "The maximum effect a drug can produce"
+            ],
+            "answer": [0]
         },
         {
-          "left": "Timely",
-          "right": "Reducing waits and harmful delays"
+            "type": "multiple_choice",
+            "title": "With regular repeated dosing, approximately how many half-lives does it take to reach steady-state plasma concentration?",
+            "description": null,
+            "marks": 1,
+            "options": ["1", "2", "4 to 5", "10 to 12"],
+            "answer": [2]
         },
         {
-          "left": "Equitable",
-          "right": "Care that does not vary in quality by personal characteristics"
+            "type": "multiple_choice",
+            "title": "A drug that binds reversibly to the same receptor site as the agonist without activating it, shifting the agonist dose-response curve to the right, is a:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Full agonist",
+                "Partial agonist",
+                "Competitive antagonist",
+                "Inverse agonist"
+            ],
+            "answer": [2]
         },
         {
-          "left": "Efficient",
-          "right": "Avoiding waste of equipment, supplies, ideas and energy"
+            "type": "multiple_choice",
+            "title": "A drug with a narrow therapeutic index is one where:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "There is a small margin between effective and toxic concentrations",
+                "The drug has a very short half-life",
+                "The drug is only effective intravenously",
+                "The drug has no known adverse effects"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Grapefruit juice can increase plasma levels of some drugs mainly by inhibiting which enzyme?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "CYP3A4",
+                "CYP2D6",
+                "Monoamine oxidase",
+                "Acetylcholinesterase"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following drugs have a narrow therapeutic index and commonly require monitoring?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Warfarin",
+                "Lithium",
+                "Amoxicillin",
+                "Digoxin",
+                "Loratadine"
+            ],
+            "answer": [0, 1, 3]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are principles of safe prescribing?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Check the patient's allergy history",
+                "Consider renal and hepatic function",
+                "Review current medicines for potential interactions",
+                "Abbreviate units as U to save space",
+                "Omit the indication from the prescription"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "fill_blank",
+            "title": "The ____ effect is the metabolism of an orally administered drug by the gut wall and liver before it reaches the systemic circulation.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["first-pass", "first pass", "presystemic"]
+        },
+        {
+            "type": "ordering",
+            "title": "Put the stages of pharmacokinetics in the order a drug passes through them",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": ["Absorption", "Distribution", "Metabolism", "Excretion"]
+        },
+        {
+            "type": "short_answer",
+            "title": "Explain how an enzyme-inducing drug can cause a clinically important interaction, using an example.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "Enzyme inducers such as rifampicin increase the synthesis of hepatic CYP enzymes, speeding the metabolism of other drugs and lowering their plasma concentrations. For example, rifampicin can reduce the effectiveness of combined oral contraceptives, so an alternative or additional contraceptive method is needed. The effect develops over days and can persist for weeks after the inducer is stopped."
+            ]
         }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "Explain what a just culture is and why it matters for patient safety.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "A just culture distinguishes between human error, at-risk behaviour and reckless behaviour, responding to each proportionately rather than blaming individuals for system failures. It encourages staff to report incidents and near misses without fear, which gives the organisation the information needed to find and fix system weaknesses, while still holding people accountable for reckless conduct."
-      ]
-    }
-  ],
-  "Principles of Management Assessment": [
-    {
-      "type": "multiple_choice",
-      "title": "Which theorist first described management as a set of functions including planning, organising, commanding, coordinating and controlling?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Henri Fayol",
-        "Frederick Taylor",
-        "Abraham Maslow",
-        "Peter Drucker"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which management function involves setting objectives and deciding in advance how to achieve them?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Planning",
-        "Organising",
-        "Leading",
-        "Controlling"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "In a SMART objective, what does the M stand for?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Manageable",
-        "Measurable",
-        "Motivational",
-        "Mandatory"
-      ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Span of control refers to:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "The number of staff a manager directly supervises",
-        "The size of a department's budget",
-        "The number of levels in an organisation",
-        "The range of services a hospital offers"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "The controlling function of management mainly involves:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Comparing actual performance with standards and taking corrective action",
-        "Recruiting new staff",
-        "Inspiring staff with a shared vision",
-        "Writing the organisation's mission statement"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following activities belong to the organising function?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Designing the department's structure",
-        "Assigning roles and responsibilities",
-        "Allocating staff and equipment to tasks",
-        "Motivating staff through recognition",
-        "Monitoring key performance indicators"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are characteristics of transformational leadership?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Inspiring a shared vision",
-        "Individualised consideration of staff",
-        "Intellectual stimulation",
-        "Relying solely on rewards and penalties",
-        "Avoiding decisions and leaving staff to self-direct"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "A ____ analysis examines an organisation's strengths, weaknesses, opportunities and threats.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "SWOT"
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Put the steps of the control process in the correct order",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
-        "Establish performance standards",
-        "Measure actual performance",
-        "Compare performance with the standards",
-        "Take corrective action"
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "Describe how a ward manager could apply the four functions of management when introducing a new hand-hygiene programme.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "In planning, the manager sets a measurable compliance target and decides on training and audit methods. In organising, they assign champions, schedule training and ensure hand-rub supplies are available, and in leading they communicate the purpose and motivate staff by example. In controlling, they audit compliance, compare results with the target and take corrective action where needed."
-      ]
-    }
-  ],
-  "Yoga Therapy Foundations Test": [
-    {
-      "type": "multiple_choice",
-      "title": "Which condition generally makes inversions such as headstand inadvisable?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Uncontrolled hypertension",
-        "Mild lower-back stiffness",
-        "Tight hamstrings",
-        "Stress-related sleep difficulty"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Ujjayi breath is characterised by:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "A gentle constriction of the throat producing a soft audible sound",
-        "Rapid forceful exhalations through the nose",
-        "Breathing through alternate nostrils",
-        "Holding the breath for as long as possible"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "In a typical yoga session, final relaxation (savasana) is usually placed:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "At the end of the session",
-        "At the very beginning, before centering",
-        "Between standing postures",
-        "Only in sessions without breathwork"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "For a client in the third trimester of pregnancy, which of the following should be avoided?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Lying prone on the abdomen",
-        "Supported side-lying relaxation",
-        "Gentle seated breath awareness",
-        "Supported wide-legged seated postures"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "During diaphragmatic breathing, what normally happens to the abdomen on inhalation?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "It gently expands as the diaphragm descends",
-        "It draws sharply inward",
-        "It stays completely still",
-        "It contracts forcefully to push air in"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "For which of the following is kapalabhati commonly considered contraindicated or requiring caution?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Pregnancy",
-        "Uncontrolled hypertension",
-        "Recent abdominal surgery",
-        "Mild everyday stress",
-        "Epilepsy"
-      ],
-      "answer": [
-        0,
-        1,
-        2,
-        4
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are principles of safe asana practice?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Warm up before deeper postures",
-        "Work within a pain-free range",
-        "Use props to modify postures when needed",
-        "Hold the breath throughout strenuous postures",
-        "Force the body to the end of its range"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "The Sanskrit term ____ refers to the regulation or extension of the breath.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "pranayama",
-        "pranayam"
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Put these stages of a typical yoga therapy session in the correct order",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
-        "Centering and breath awareness",
-        "Gentle warm-up movements",
-        "Main asana sequence",
-        "Final relaxation (savasana)"
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "How should a yoga therapist approach a client with chronic low back pain?",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "The therapist should first take a history, check for red flags and confirm the client has been assessed by a medical professional, working within the client's pain-free range. Practice typically begins with gentle mobility, diaphragmatic breathing and supported postures, progressing gradually while avoiding deep forward bends or loaded twists that provoke symptoms. Progress should be monitored and the client referred back if pain worsens."
-      ]
-    }
-  ],
-  "Clinical Nutrition Certification Exam": [
-    {
-      "type": "multiple_choice",
-      "title": "Approximately how much energy does one gram of carbohydrate provide?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "4 kcal",
-        "7 kcal",
-        "9 kcal",
-        "2 kcal"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "Which dietary pattern has strong evidence for lowering blood pressure?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "DASH (Dietary Approaches to Stop Hypertension)",
-        "Ketogenic diet",
-        "Carnivore diet",
-        "Low-residue diet"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "The glycaemic index of a food describes:",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "How quickly its carbohydrate raises blood glucose compared with a reference food",
-        "Its total calorie content",
-        "Its protein quality",
-        "Its fibre content per serving"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "To help lower LDL cholesterol in heart disease, which should be limited?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "Saturated and trans fats",
-        "Monounsaturated fats",
-        "Omega-3 fatty acids",
-        "Soluble fibre"
-      ],
-      "answer": [
-        0
-      ]
-    },
-    {
-      "type": "multiple_choice",
-      "title": "A 2000 kcal diet provides 50% of its energy from carbohydrate. How many grams of carbohydrate is this?",
-      "description": null,
-      "marks": 1,
-      "options": [
-        "125 g",
-        "200 g",
-        "250 g",
-        "500 g"
-      ],
-      "answer": [
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are recommended dietary strategies for type 2 diabetes?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Choose high-fibre whole grains over refined grains",
-        "Spread carbohydrate intake evenly across the day",
-        "Limit sugar-sweetened beverages",
-        "Eliminate all carbohydrates permanently",
-        "Regularly skip meals to reduce intake"
-      ],
-      "answer": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "type": "multiple_select",
-      "title": "Which of the following are features of the DASH eating pattern?",
-      "description": "Select all that apply.",
-      "marks": 2,
-      "options": [
-        "Rich in fruits and vegetables",
-        "Includes low-fat dairy products",
-        "Reduced sodium intake",
-        "Includes nuts, seeds and legumes",
-        "High in red and processed meat"
-      ],
-      "answer": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "title": "Each gram of fat provides approximately ____ kcal of energy.",
-      "description": null,
-      "marks": 1,
-      "options": null,
-      "answer": [
-        "9",
-        "nine"
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Match each nutrient with its main relevance in cardiometabolic diet planning",
-      "description": null,
-      "marks": 2,
-      "options": null,
-      "answer": [
+    ],
+    "Healthcare Quality Management Exam": [
         {
-          "left": "Sodium",
-          "right": "Excess intake raises blood pressure"
+            "type": "multiple_choice",
+            "title": "Donabedian's framework for assessing the quality of care consists of:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Structure, process and outcome",
+                "Plan, do, study and act",
+                "Input, throughput and output",
+                "Safety, cost and access"
+            ],
+            "answer": [0]
         },
         {
-          "left": "Soluble fibre",
-          "right": "Helps lower LDL cholesterol"
+            "type": "multiple_choice",
+            "title": "In the PDSA model for improvement, what does the S stand for?",
+            "description": null,
+            "marks": 1,
+            "options": ["Standardise", "Study", "Sustain", "Supervise"],
+            "answer": [1]
         },
         {
-          "left": "Omega-3 fatty acids",
-          "right": "Help lower triglycerides"
+            "type": "multiple_choice",
+            "title": "Which organisation accredits healthcare organisations internationally and publishes the International Patient Safety Goals?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Joint Commission International",
+                "National Institute for Health and Care Excellence",
+                "Centers for Disease Control and Prevention",
+                "World Medical Association"
+            ],
+            "answer": [0]
         },
         {
-          "left": "Potassium",
-          "right": "Helps counter the effect of sodium on blood pressure"
+            "type": "multiple_choice",
+            "title": "The primary purpose of a root cause analysis after an adverse event is to:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Identify underlying system factors so recurrence can be prevented",
+                "Identify the individual responsible for disciplinary action",
+                "Calculate the financial cost of the event",
+                "Satisfy insurance reporting requirements only"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "The Swiss cheese model of accident causation was proposed by:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "James Reason",
+                "W. Edwards Deming",
+                "Avedis Donabedian",
+                "Joseph Juran"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are outcome indicators?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Hospital-acquired infection rate",
+                "Nurse-to-patient ratio",
+                "30-day unplanned readmission rate",
+                "Risk-adjusted inpatient mortality",
+                "Percentage of patients receiving prophylaxis before surgery"
+            ],
+            "answer": [0, 2, 3]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are commonly used continuous quality improvement tools?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Pareto chart",
+                "Fishbone (Ishikawa) diagram",
+                "Run chart",
+                "Value stream mapping",
+                "Staff disciplinary policy"
+            ],
+            "answer": [0, 1, 2, 3]
+        },
+        {
+            "type": "fill_blank",
+            "title": "In failure mode and effects analysis (FMEA), the risk priority number is calculated by multiplying severity, occurrence and ____.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["detection", "detectability", "detection rating"]
+        },
+        {
+            "type": "matching",
+            "title": "Match each Institute of Medicine quality aim with its meaning",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                {
+                    "left": "Safe",
+                    "right": "Avoiding harm to patients from care intended to help them"
+                },
+                {
+                    "left": "Timely",
+                    "right": "Reducing waits and harmful delays"
+                },
+                {
+                    "left": "Equitable",
+                    "right": "Care that does not vary in quality by personal characteristics"
+                },
+                {
+                    "left": "Efficient",
+                    "right": "Avoiding waste of equipment, supplies, ideas and energy"
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "Explain what a just culture is and why it matters for patient safety.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "A just culture distinguishes between human error, at-risk behaviour and reckless behaviour, responding to each proportionately rather than blaming individuals for system failures. It encourages staff to report incidents and near misses without fear, which gives the organisation the information needed to find and fix system weaknesses, while still holding people accountable for reckless conduct."
+            ]
         }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "title": "A 70 kg adult is prescribed 1.0 g of protein per kg body weight per day. Calculate the daily protein in grams and the energy it provides, showing your working.",
-      "description": "Answer in 2–3 sentences.",
-      "marks": 3,
-      "options": null,
-      "answer": [
-        "Protein required is 70 kg multiplied by 1.0 g/kg, which equals 70 g per day. Protein provides about 4 kcal per gram, so 70 g multiplied by 4 kcal gives about 280 kcal per day from protein."
-      ]
-    }
-  ]
+    ],
+    "Principles of Management Assessment": [
+        {
+            "type": "multiple_choice",
+            "title": "Which theorist first described management as a set of functions including planning, organising, commanding, coordinating and controlling?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Henri Fayol",
+                "Frederick Taylor",
+                "Abraham Maslow",
+                "Peter Drucker"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Which management function involves setting objectives and deciding in advance how to achieve them?",
+            "description": null,
+            "marks": 1,
+            "options": ["Planning", "Organising", "Leading", "Controlling"],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "In a SMART objective, what does the M stand for?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Manageable",
+                "Measurable",
+                "Motivational",
+                "Mandatory"
+            ],
+            "answer": [1]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Span of control refers to:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "The number of staff a manager directly supervises",
+                "The size of a department's budget",
+                "The number of levels in an organisation",
+                "The range of services a hospital offers"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "The controlling function of management mainly involves:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Comparing actual performance with standards and taking corrective action",
+                "Recruiting new staff",
+                "Inspiring staff with a shared vision",
+                "Writing the organisation's mission statement"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following activities belong to the organising function?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Designing the department's structure",
+                "Assigning roles and responsibilities",
+                "Allocating staff and equipment to tasks",
+                "Motivating staff through recognition",
+                "Monitoring key performance indicators"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are characteristics of transformational leadership?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Inspiring a shared vision",
+                "Individualised consideration of staff",
+                "Intellectual stimulation",
+                "Relying solely on rewards and penalties",
+                "Avoiding decisions and leaving staff to self-direct"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "fill_blank",
+            "title": "A ____ analysis examines an organisation's strengths, weaknesses, opportunities and threats.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["SWOT"]
+        },
+        {
+            "type": "ordering",
+            "title": "Put the steps of the control process in the correct order",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                "Establish performance standards",
+                "Measure actual performance",
+                "Compare performance with the standards",
+                "Take corrective action"
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "Describe how a ward manager could apply the four functions of management when introducing a new hand-hygiene programme.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "In planning, the manager sets a measurable compliance target and decides on training and audit methods. In organising, they assign champions, schedule training and ensure hand-rub supplies are available, and in leading they communicate the purpose and motivate staff by example. In controlling, they audit compliance, compare results with the target and take corrective action where needed."
+            ]
+        }
+    ],
+    "Yoga Therapy Foundations Test": [
+        {
+            "type": "multiple_choice",
+            "title": "Which condition generally makes inversions such as headstand inadvisable?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Uncontrolled hypertension",
+                "Mild lower-back stiffness",
+                "Tight hamstrings",
+                "Stress-related sleep difficulty"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Ujjayi breath is characterised by:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "A gentle constriction of the throat producing a soft audible sound",
+                "Rapid forceful exhalations through the nose",
+                "Breathing through alternate nostrils",
+                "Holding the breath for as long as possible"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "In a typical yoga session, final relaxation (savasana) is usually placed:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "At the end of the session",
+                "At the very beginning, before centering",
+                "Between standing postures",
+                "Only in sessions without breathwork"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "For a client in the third trimester of pregnancy, which of the following should be avoided?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Lying prone on the abdomen",
+                "Supported side-lying relaxation",
+                "Gentle seated breath awareness",
+                "Supported wide-legged seated postures"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "During diaphragmatic breathing, what normally happens to the abdomen on inhalation?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "It gently expands as the diaphragm descends",
+                "It draws sharply inward",
+                "It stays completely still",
+                "It contracts forcefully to push air in"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_select",
+            "title": "For which of the following is kapalabhati commonly considered contraindicated or requiring caution?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Pregnancy",
+                "Uncontrolled hypertension",
+                "Recent abdominal surgery",
+                "Mild everyday stress",
+                "Epilepsy"
+            ],
+            "answer": [0, 1, 2, 4]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are principles of safe asana practice?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Warm up before deeper postures",
+                "Work within a pain-free range",
+                "Use props to modify postures when needed",
+                "Hold the breath throughout strenuous postures",
+                "Force the body to the end of its range"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "fill_blank",
+            "title": "The Sanskrit term ____ refers to the regulation or extension of the breath.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["pranayama", "pranayam"]
+        },
+        {
+            "type": "ordering",
+            "title": "Put these stages of a typical yoga therapy session in the correct order",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                "Centering and breath awareness",
+                "Gentle warm-up movements",
+                "Main asana sequence",
+                "Final relaxation (savasana)"
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "How should a yoga therapist approach a client with chronic low back pain?",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "The therapist should first take a history, check for red flags and confirm the client has been assessed by a medical professional, working within the client's pain-free range. Practice typically begins with gentle mobility, diaphragmatic breathing and supported postures, progressing gradually while avoiding deep forward bends or loaded twists that provoke symptoms. Progress should be monitored and the client referred back if pain worsens."
+            ]
+        }
+    ],
+    "Clinical Nutrition Certification Exam": [
+        {
+            "type": "multiple_choice",
+            "title": "Approximately how much energy does one gram of carbohydrate provide?",
+            "description": null,
+            "marks": 1,
+            "options": ["4 kcal", "7 kcal", "9 kcal", "2 kcal"],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "Which dietary pattern has strong evidence for lowering blood pressure?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "DASH (Dietary Approaches to Stop Hypertension)",
+                "Ketogenic diet",
+                "Carnivore diet",
+                "Low-residue diet"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "The glycaemic index of a food describes:",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "How quickly its carbohydrate raises blood glucose compared with a reference food",
+                "Its total calorie content",
+                "Its protein quality",
+                "Its fibre content per serving"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "To help lower LDL cholesterol in heart disease, which should be limited?",
+            "description": null,
+            "marks": 1,
+            "options": [
+                "Saturated and trans fats",
+                "Monounsaturated fats",
+                "Omega-3 fatty acids",
+                "Soluble fibre"
+            ],
+            "answer": [0]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "A 2000 kcal diet provides 50% of its energy from carbohydrate. How many grams of carbohydrate is this?",
+            "description": null,
+            "marks": 1,
+            "options": ["125 g", "200 g", "250 g", "500 g"],
+            "answer": [2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are recommended dietary strategies for type 2 diabetes?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Choose high-fibre whole grains over refined grains",
+                "Spread carbohydrate intake evenly across the day",
+                "Limit sugar-sweetened beverages",
+                "Eliminate all carbohydrates permanently",
+                "Regularly skip meals to reduce intake"
+            ],
+            "answer": [0, 1, 2]
+        },
+        {
+            "type": "multiple_select",
+            "title": "Which of the following are features of the DASH eating pattern?",
+            "description": "Select all that apply.",
+            "marks": 2,
+            "options": [
+                "Rich in fruits and vegetables",
+                "Includes low-fat dairy products",
+                "Reduced sodium intake",
+                "Includes nuts, seeds and legumes",
+                "High in red and processed meat"
+            ],
+            "answer": [0, 1, 2, 3]
+        },
+        {
+            "type": "fill_blank",
+            "title": "Each gram of fat provides approximately ____ kcal of energy.",
+            "description": null,
+            "marks": 1,
+            "options": null,
+            "answer": ["9", "nine"]
+        },
+        {
+            "type": "matching",
+            "title": "Match each nutrient with its main relevance in cardiometabolic diet planning",
+            "description": null,
+            "marks": 2,
+            "options": null,
+            "answer": [
+                {
+                    "left": "Sodium",
+                    "right": "Excess intake raises blood pressure"
+                },
+                {
+                    "left": "Soluble fibre",
+                    "right": "Helps lower LDL cholesterol"
+                },
+                {
+                    "left": "Omega-3 fatty acids",
+                    "right": "Help lower triglycerides"
+                },
+                {
+                    "left": "Potassium",
+                    "right": "Helps counter the effect of sodium on blood pressure"
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "title": "A 70 kg adult is prescribed 1.0 g of protein per kg body weight per day. Calculate the daily protein in grams and the energy it provides, showing your working.",
+            "description": "Answer in 2–3 sentences.",
+            "marks": 3,
+            "options": null,
+            "answer": [
+                "Protein required is 70 kg multiplied by 1.0 g/kg, which equals 70 g per day. Protein provides about 4 kcal per gram, so 70 g multiplied by 4 kcal gives about 280 kcal per day from protein."
+            ]
+        }
+    ]
 }

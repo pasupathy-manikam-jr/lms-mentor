@@ -796,7 +796,7 @@ export function CourseSeoFields({ form }: { form: SeoForm }) {
                             }
                             placeholder={label}
                             aria-invalid={!!errors[name]}
-                            className="min-h-16 rounded-lg [field-sizing:fixed]"
+                            className="[field-sizing:fixed] min-h-16 rounded-lg"
                         />
                     ) : (
                         <Input
