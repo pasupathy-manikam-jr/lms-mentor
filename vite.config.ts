@@ -23,6 +23,9 @@ function basePath(): Plugin {
     return {
         name: 'lms:base-path',
         enforce: 'pre',
+        // Lazy-loaded chunks are fetched from here; the Laravel plugin would otherwise
+        // derive it from ASSET_URL, which the CI build doesn't have.
+        config: () => (prefix === '' ? {} : { base: `/${prefix}/build/` }),
         transform(code, id) {
             if (prefix === '' || !/resources[\\/]js[\\/].*\.tsx?$/.test(id)) {
                 return null;
