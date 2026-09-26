@@ -37,7 +37,7 @@ class UserController extends Controller
             ->withQueryString()
             ->through(fn (User $user) => [
                 ...$user->only(['id', 'name', 'email', 'is_active', 'created_at']),
-                'role' => $user->roles->first()?->name ?? UserRole::Student->value,
+                'role' => $user->roles->first()->name ?? UserRole::Student->value,
             ]);
 
         return Inertia::render('admin/users/index', [

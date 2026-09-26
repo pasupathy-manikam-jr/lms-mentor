@@ -20,11 +20,11 @@ class WelcomeController extends Controller
      */
     public function __invoke(): Response
     {
-        $collections = Page::firstWhere('slug', 'home')?->collections ?? [];
+        $collections = Page::firstWhere('slug', 'home')->collections ?? [];
 
         return Inertia::render('welcome', [
             'page' => Page::propsFor('home'),
-            'categories' => Category::listedFor('courses', fn ($query) => $query->approved(), 'courses_count'),
+            'categories' => Category::listedFor('courses', 'approved', 'courses_count'),
             'popularCourses' => Course::approved()->with('category:id,icon')->where('is_popular', true)->orderBy('id')->take(8)->get(),
             'latestCourses' => Course::approved()->with('category:id,icon')->latest()->latest('id')->take(8)->get(),
             'instructors' => $this->picked(Instructor::approved()->orderBy('id'), $collections['instructors'] ?? []),

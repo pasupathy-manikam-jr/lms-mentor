@@ -63,7 +63,7 @@ class PaymentController extends Controller
 
     public function proof(Payment $payment): StreamedResponse
     {
-        abort_unless($payment->proof_path, 404);
+        abort_unless($payment->proof_path !== null, 404);
 
         return Storage::disk('local')->response($payment->proof_path);
     }
@@ -91,7 +91,7 @@ class PaymentController extends Controller
                 ...$payment->only(['id', 'amount', 'currency', 'method', 'transaction_id', 'status', 'paid_on', 'note']),
                 'has_proof' => $payment->proof_path !== null,
                 'user' => $payment->user->only(['name', 'email']),
-                'item' => ['type' => $payment->payable_type, 'title' => $payment->payable?->title],
+                'item' => ['type' => $payment->payable_type, 'title' => $payment->payable?->getAttribute('title')],
                 'created_at' => $payment->created_at->toIso8601String(),
             ]);
 

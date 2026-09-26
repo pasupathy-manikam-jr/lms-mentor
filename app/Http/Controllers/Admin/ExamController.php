@@ -11,6 +11,7 @@ use App\Models\Exam;
 use App\Models\Instructor;
 use App\Support\ContentOwner;
 use App\Support\HtmlSanitizer;
+use App\Support\PublicUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -179,7 +180,7 @@ class ExamController extends Controller
         ];
 
         if ($request->hasFile('thumbnail')) {
-            $attributes['image_url'] = Storage::disk('public')->url($request->file('thumbnail')->store('exams', 'public'));
+            $attributes['image_url'] = PublicUpload::url($request->file('thumbnail'), 'exams');
         } elseif ($request->boolean('remove_thumbnail') || ! $exam) {
             $attributes['image_url'] = null;
         }

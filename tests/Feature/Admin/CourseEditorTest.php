@@ -133,6 +133,23 @@ class CourseEditorTest extends TestCase
     /**
      * @return array<string, mixed>
      */
+    public function test_questions_can_be_added_to_a_quiz_but_not_to_a_lesson()
+    {
+        $section = $this->course->sections()->create(['title' => 'Basics', 'position' => 1]);
+        $lesson = $section->lessons()->create(['course_id' => $this->course->id, 'title' => 'Welcome', 'position' => 1]);
+        $quiz = $section->lessons()->create(['course_id' => $this->course->id, 'type' => 'quiz', 'title' => 'Basics quiz', 'position' => 2]);
+        $question = ['type' => 'multiple_choice', 'title' => 'Q', 'marks' => 2, 'options' => ['Vata', 'Pitta'], 'answer' => [1]];
+        $this->actingAs($this->admin);
+
+        $this->get(route('admin.courses.quizzes.questions.index', [$this->course, $quiz]))
+            ->assertInertia(fn (Assert $page) => $page->component('admin/courses/quiz-questions')->where('quiz.id', $quiz->id));
+        $this->post(route('admin.courses.quizzes.questions.store', [$this->course, $quiz]), $question)->assertSessionHasNoErrors();
+        $this->assertSame(1, $quiz->questions()->count());
+
+        $this->get(route('admin.courses.quizzes.questions.index', [$this->course, $lesson]))->assertNotFound();
+        $this->post(route('admin.courses.quizzes.questions.store', [$this->course, $lesson]), $question)->assertNotFound();
+    }
+
     private function basicPayload(): array
     {
         return [

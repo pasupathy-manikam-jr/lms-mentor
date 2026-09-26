@@ -54,7 +54,7 @@ class Page extends Model
         $page = static::firstWhere('slug', $slug);
 
         return [
-            'content' => (object) ($page?->content ?? []),
+            'content' => (object) ($page->content ?? []),
             'meta_title' => $page?->meta_title,
             'meta_description' => $page?->meta_description,
             'og_image_url' => $page?->og_image_url,

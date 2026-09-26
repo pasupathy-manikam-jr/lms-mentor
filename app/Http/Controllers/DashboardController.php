@@ -104,11 +104,9 @@ class DashboardController extends Controller
             ->groupBy(fn (Enrollment $enrollment) => $enrollment->created_at->month)
             ->map(fn ($enrollments) => $enrollments->sum('price_paid'));
 
-        return collect(range(1, 12))
-            ->map(fn (int $month) => [
-                'month' => $month,
-                'revenue' => round((float) ($paidByMonth[$month] ?? 0) * $share, 2),
-            ])
-            ->all();
+        return array_map(fn (int $month) => [
+            'month' => $month,
+            'revenue' => round((float) ($paidByMonth[$month] ?? 0) * $share, 2),
+        ], range(1, 12));
     }
 }

@@ -36,7 +36,7 @@ class ExamController extends Controller
 
         return Inertia::render('exams/index', [
             'exams' => $exams,
-            'categories' => Category::listedFor('exams', fn ($query) => $query->published()),
+            'categories' => Category::listedFor('exams', 'published'),
             'filters' => $filters,
         ]);
     }
@@ -65,7 +65,7 @@ class ExamController extends Controller
                 ->orderBy('id')
                 ->take(3)
                 ->get(),
-            'categories' => Category::listedFor('exams', fn ($query) => $query->published()),
+            'categories' => Category::listedFor('exams', 'published'),
         ]);
     }
 }

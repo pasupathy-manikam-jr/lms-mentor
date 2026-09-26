@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Closure;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -42,14 +40,14 @@ class Category extends Model
      * The Default category is left out while it holds none of them.
      *
      * @param  'courses'|'exams'|'products'|'posts'  $relation
-     * @param  (Closure(Builder<Model>): mixed)|null  $constraint
+     * @param  'approved'|'published'  $scope  The items' own scope for what the public may see.
      * @return Collection<int, Category>
      */
-    public static function listedFor(string $relation, ?Closure $constraint = null, string $countAs = 'items_count'): Collection
+    public static function listedFor(string $relation, string $scope, string $countAs = 'items_count'): Collection
     {
-        return static::query()
+        return self::query()
             ->whereNull('parent_id')
-            ->withCount(["{$relation} as {$countAs}" => $constraint ?? fn () => null])
+            ->withCount(["{$relation} as {$countAs}" => fn ($query) => $query->{$scope}()])
             ->orderBy('position')
             ->orderBy('id')
             ->get()

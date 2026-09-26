@@ -70,6 +70,20 @@ class ExamAttemptTest extends TestCase
         $this->actingAs(User::factory()->create())->get(route('exams.attempts.show', $attempt))->assertNotFound();
     }
 
+    public function test_shuffled_items_keep_their_order_when_the_attempt_is_reloaded()
+    {
+        $letters = range('a', 'h');
+        $this->exam->questions()->create(['type' => 'ordering', 'title' => 'Q6', 'description' => null, 'options' => null, 'answer' => $letters, 'marks' => 1, 'position' => 6]);
+        $this->actingAs($this->student)->post(route('exams.attempts.store', $this->exam));
+        $show = route('exams.attempts.show', ExamAttempt::sole());
+
+        $items = fn () => $this->get($show)->viewData('page')['props']['questions'][5]['items'];
+        $first = $items();
+
+        $this->assertEqualsCanonicalizing($letters, $first);
+        $this->assertSame($first, $items());
+    }
+
     public function test_attempts_are_limited_late_answers_do_not_count_and_only_enrolled_students_start()
     {
         $this->actingAs($this->student)->post(route('exams.attempts.store', $this->exam));

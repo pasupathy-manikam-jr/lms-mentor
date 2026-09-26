@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * An instructor's request to withdraw their earnings.
@@ -16,7 +16,7 @@ use Illuminate\Support\Carbon;
  * @property string $status pending, approved (paid) or rejected
  * @property string|null $payout_method How it was paid, e.g. "Bank transfer".
  * @property string|null $note
- * @property Carbon|null $processed_at
+ * @property CarbonImmutable|null $processed_at
  */
 #[Fillable(['instructor_id', 'amount', 'status', 'payout_method', 'note', 'processed_at'])]
 class PayoutRequest extends Model

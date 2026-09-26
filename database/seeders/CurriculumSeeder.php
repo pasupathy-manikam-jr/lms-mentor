@@ -7,6 +7,7 @@ use App\Enums\LessonType;
 use App\Models\Course;
 use App\Support\HtmlSanitizer;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 /**
  * Gives each catalog course its curriculum from data/curriculum.json: sections of text lessons, each
@@ -17,7 +18,7 @@ class CurriculumSeeder extends Seeder
     public function run(HtmlSanitizer $sanitizer): void
     {
         /** @var array<string, list<array{section: string, lessons: list<array{title: string, minutes: int, body: string, description: string}>, quiz: array{title: string, minutes: int, total_mark: int, pass_mark: int, retake_attempts: int, summary: string}}>> $curriculum */
-        $curriculum = json_decode(file_get_contents(__DIR__.'/data/curriculum.json'), true, flags: JSON_THROW_ON_ERROR);
+        $curriculum = File::json(__DIR__.'/data/curriculum.json', JSON_THROW_ON_ERROR);
 
         Course::whereIn('title', array_keys($curriculum))->whereDoesntHave('sections')->get()
             ->each(function (Course $course) use ($curriculum, $sanitizer) {

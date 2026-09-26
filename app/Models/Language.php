@@ -50,12 +50,12 @@ class Language extends Model
      */
     public static function switchable(): array
     {
-        return static::cached()['active'];
+        return self::cached()['active'];
     }
 
     public static function defaultCode(): string
     {
-        return static::cached()['default'];
+        return self::cached()['default'];
     }
 
     /**
@@ -94,7 +94,7 @@ class Language extends Model
                 'active' => $languages->where('is_active', true)
                     ->mapWithKeys(fn (Language $language) => [$language->code => ['name' => $language->name, 'flag' => $language->flag]])
                     ->all(),
-                'default' => $languages->firstWhere('is_default', true)?->code ?? 'en',
+                'default' => $languages->firstWhere('is_default', true)->code ?? 'en',
             ];
         });
     }

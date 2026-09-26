@@ -75,7 +75,7 @@ class PaymentWebhookController extends Controller
         $parts = collect(explode(',', (string) $request->header('Stripe-Signature')))
             ->map(fn (string $part) => explode('=', trim($part), 2))
             ->filter(fn (array $pair) => count($pair) === 2);
-        $timestamp = (int) ($parts->firstWhere(0, 't')[1] ?? 0);
+        $timestamp = (int) ($parts->first(fn (array $pair) => $pair[0] === 't')[1] ?? 0);
 
         if (abs(time() - $timestamp) > 300) {
             return false;
@@ -83,6 +83,6 @@ class PaymentWebhookController extends Controller
 
         $expected = hash_hmac('sha256', $timestamp.'.'.$request->getContent(), $secret);
 
-        return $parts->where(0, 'v1')->contains(fn (array $pair) => hash_equals($expected, $pair[1]));
+        return $parts->contains(fn (array $pair) => $pair[0] === 'v1' && hash_equals($expected, $pair[1]));
     }
 }

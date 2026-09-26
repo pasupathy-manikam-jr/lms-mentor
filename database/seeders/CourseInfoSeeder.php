@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\CourseInfoType;
 use App\Models\Course;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 /**
  * Fills each catalog course's Info tab (FAQs, requirements and outcomes) from data/course-info.json.
@@ -15,7 +16,7 @@ class CourseInfoSeeder extends Seeder
     public function run(): void
     {
         /** @var array<string, array{faqs: list<array{question: string, answer: string}>, requirements: list<string>, outcomes: list<string>}> $info */
-        $info = json_decode(file_get_contents(__DIR__.'/data/course-info.json'), true, flags: JSON_THROW_ON_ERROR);
+        $info = File::json(__DIR__.'/data/course-info.json', JSON_THROW_ON_ERROR);
 
         Course::whereIn('title', array_keys($info))->whereDoesntHave('infoItems')->get()
             ->each(function (Course $course) use ($info) {

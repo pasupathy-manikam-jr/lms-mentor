@@ -87,7 +87,7 @@ class PaymentGateway extends Model
     /**
      * Credential field names for this gateway, prefixed by environment, e.g. sandbox_secret_key.
      *
-     * @return list<string>
+     * @return array<int, string>
      */
     public function credentialFields(): array
     {

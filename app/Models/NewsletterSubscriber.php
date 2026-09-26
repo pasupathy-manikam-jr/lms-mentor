@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
  * @property string $email
- * @property Carbon|null $unsubscribed_at Set when they unsubscribe; newsletters skip them.
+ * @property CarbonImmutable|null $unsubscribed_at Set when they unsubscribe; newsletters skip them.
  */
 #[Fillable(['email', 'unsubscribed_at'])]
 class NewsletterSubscriber extends Model

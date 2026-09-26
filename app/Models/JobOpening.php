@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 
 /**
  * A vacancy (the demo's "job circular") listed on the Careers page while active and before its
@@ -20,7 +20,7 @@ use Illuminate\Support\Carbon;
  * @property string $work_type
  * @property string $experience_level
  * @property int $positions
- * @property Carbon $deadline
+ * @property CarbonImmutable $deadline
  * @property string $description Sanitized rich-text HTML.
  * @property list<string> $skills
  * @property int|null $salary_min

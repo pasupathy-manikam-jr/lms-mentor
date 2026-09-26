@@ -27,10 +27,11 @@ class HandleAppearance
     }
 
     /**
-     * Keep only simple lowercase slugs, since the value is written into an HTML attribute.
+     * Keep only simple lowercase slugs, since the value is written into an HTML attribute. A cookie sent
+     * as an array (theme_color[]=x) is dropped too.
      */
-    private function slug(?string $value): ?string
+    private function slug(mixed $value): ?string
     {
-        return $value !== null && preg_match('/^[a-z-]{1,20}$/', $value) ? $value : null;
+        return is_string($value) && preg_match('/^[a-z-]{1,20}$/', $value) ? $value : null;
     }
 }

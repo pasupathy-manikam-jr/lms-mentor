@@ -147,11 +147,11 @@ class CheckoutController extends Controller
         abort_unless($payment->user_id === $request->user()->id && $payment->method !== 'offline', 404);
 
         if (! $client->settle($payment)) {
-            return redirect($this->checkoutUrl($payment->payable))
+            return redirect($this->checkoutUrl($payment->item()))
                 ->withErrors(['method' => __('Your payment has not gone through. You have not been charged, or you can contact us if you were.')]);
         }
 
-        return $this->done($payment->payable, __('Payment received. Thank you!'));
+        return $this->done($payment->item(), __('Payment received. Thank you!'));
     }
 
     public function cancel(Request $request, Payment $payment): RedirectResponse
@@ -162,7 +162,7 @@ class CheckoutController extends Controller
             $payment->update(['status' => 'rejected', 'note' => __('Cancelled by the customer.')]);
         }
 
-        return redirect($this->checkoutUrl($payment->payable));
+        return redirect($this->checkoutUrl($payment->item()));
     }
 
     private function item(string $type, string $slug): Course|Exam|Product

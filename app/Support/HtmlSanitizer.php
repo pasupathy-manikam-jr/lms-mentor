@@ -67,7 +67,7 @@ class HtmlSanitizer
             }
 
             if (! $node instanceof Element) {
-                $node->remove();
+                $parent->removeChild($node);
 
                 continue;
             }

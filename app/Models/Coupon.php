@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * A discount code for a course, an exam or a store product (applies_to). With no course/exam it applies to every item of
@@ -19,8 +19,8 @@ use Illuminate\Support\Carbon;
  * @property int|null $course_id
  * @property int|null $exam_id
  * @property int|null $product_id
- * @property Carbon $valid_from
- * @property Carbon $valid_to
+ * @property CarbonImmutable $valid_from
+ * @property CarbonImmutable $valid_to
  * @property bool $is_active
  */
 #[Fillable(['code', 'discount_type', 'discount', 'applies_to', 'course_id', 'exam_id', 'product_id', 'valid_from', 'valid_to', 'is_active'])]

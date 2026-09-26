@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Exam;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 /**
  * Loads each catalog exam's questions from data/exam-questions.json and sets its question count and
@@ -14,7 +15,7 @@ class ExamQuestionSeeder extends Seeder
     public function run(): void
     {
         /** @var array<string, list<array{type: string, title: string, description: ?string, marks: int|float, options: ?list<string>, answer: list<mixed>}>> $bank */
-        $bank = json_decode(file_get_contents(__DIR__.'/data/exam-questions.json'), true, flags: JSON_THROW_ON_ERROR);
+        $bank = File::json(__DIR__.'/data/exam-questions.json', JSON_THROW_ON_ERROR);
 
         Exam::whereIn('title', array_keys($bank))->whereDoesntHave('questions')->get()
             ->each(function (Exam $exam) use ($bank) {

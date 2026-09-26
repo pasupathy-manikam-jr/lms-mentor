@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\LessonType;
 use App\Models\CertificateTemplate;
 use App\Models\Course;
 use App\Models\Exam;
@@ -59,15 +60,16 @@ class ExamAttemptController extends Controller
         abort_unless($attempt->user_id === $request->user()->id, 404);
 
         $source = $attempt->source();
-        $context = [
+        $context = $source instanceof Exam ? [
             'title' => $source->title,
-            'pass_label' => $attempt->exam_id
-                ? __('pass mark :pass%', ['pass' => $source->pass_percentage])
-                : __('pass mark :pass', ['pass' => $source->pass_mark ?? __('all marks')]),
-            'back_url' => $attempt->exam_id
-                ? route('exams.show', $source)
-                : route('courses.learn', ['course' => $source->course->slug, 'lesson' => $source->id]),
-            'certificate_url' => $attempt->exam_id ? route('exams.certificate', $source) : null,
+            'pass_label' => __('pass mark :pass%', ['pass' => $source->pass_percentage]),
+            'back_url' => route('exams.show', $source),
+            'certificate_url' => route('exams.certificate', $source),
+        ] : [
+            'title' => $source->title,
+            'pass_label' => __('pass mark :pass', ['pass' => $source->pass_mark ?? (string) __('all marks')]),
+            'back_url' => route('courses.learn', ['course' => $source->course->slug, 'lesson' => $source->id]),
+            'certificate_url' => null,
         ];
 
         if ($attempt->isOpen()) {
@@ -104,7 +106,7 @@ class ExamAttemptController extends Controller
     public function startQuiz(Request $request, Course $course, Lesson $lesson): RedirectResponse
     {
         Gate::authorize('play-course', $course);
-        abort_unless($lesson->type === 'quiz' && $lesson->questions()->exists(), 404);
+        abort_unless($lesson->type === LessonType::Quiz && $lesson->questions()->exists(), 404);
 
         $user = $request->user();
         $attempts = $user->examAttempts()->where('lesson_id', $lesson->id);
@@ -153,17 +155,17 @@ class ExamAttemptController extends Controller
     public function certificate(Request $request, Exam $exam): Response
     {
         $passed = $request->user()->examAttempts()->whereBelongsTo($exam)->where('passed', true)->latest('submitted_at')->first();
-        abort_unless($passed, 404);
+        abort_unless($passed !== null, 404);
 
         $template = CertificateTemplate::activeFor('certificate', 'exam');
-        abort_unless($template, 404);
+        abort_unless($template !== null, 404);
 
         return Inertia::render('courses/certificate', [
             'template' => $template->only(['design', 'colors', 'content']),
             'data' => [
                 'recipient' => $request->user()->name,
                 'course' => $exam->title,
-                'date' => $passed->submitted_at->locale(app()->getLocale())->isoFormat('LL'),
+                'date' => $passed->submitted_at->settings(['locale' => app()->getLocale()])->isoFormat('LL'),
                 'grade' => __(':percent%', ['percent' => round((float) $passed->score / max(1, (float) $passed->total_marks) * 100)]),
             ],
             'courseUrl' => route('exams.show', $exam),

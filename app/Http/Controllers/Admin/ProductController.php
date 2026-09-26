@@ -13,6 +13,7 @@ use App\Models\ProductInfoItem;
 use App\Models\ProductOrder;
 use App\Support\ContentOwner;
 use App\Support\HtmlSanitizer;
+use App\Support\PublicUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -287,7 +288,7 @@ class ProductController extends Controller
         ];
 
         if ($request->hasFile('thumbnail')) {
-            $attributes['image_url'] = Storage::disk('public')->url($request->file('thumbnail')->store('products', 'public'));
+            $attributes['image_url'] = PublicUpload::url($request->file('thumbnail'), 'products');
         } elseif ($request->boolean('remove_thumbnail') || ! $product) {
             $attributes['image_url'] = null;
         }

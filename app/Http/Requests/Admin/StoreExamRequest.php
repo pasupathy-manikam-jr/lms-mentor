@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests\Admin;
 
+use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 /**
  * The Create Exam form, and the exam editor's Basic, Pricing, Settings, Media and SEO tabs (each save
@@ -59,10 +61,12 @@ class StoreExamRequest extends FormRequest
 
     /**
      * An exam needs a time limit.
+     *
+     * @return list<Closure(Validator): void>
      */
     public function after(): array
     {
-        return [function ($validator) {
+        return [function (Validator $validator): void {
             if (! $validator->errors()->hasAny(['duration_hours', 'duration_minutes'])
                 && $this->integer('duration_hours') === 0 && $this->integer('duration_minutes') === 0) {
                 $validator->errors()->add('duration_minutes', __('Set a duration for the exam.'));

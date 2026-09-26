@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * A scheduled live session of a course.
@@ -13,7 +13,7 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property int $course_id
  * @property string $topic
- * @property Carbon $starts_at
+ * @property CarbonImmutable $starts_at
  * @property int $duration_minutes
  * @property string $meeting_url
  * @property string|null $notes

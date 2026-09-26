@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Course;
 use App\Models\Enrollment;
+use App\Models\ExamAttempt;
 use App\Models\Lesson;
 use App\Models\User;
 use Database\Seeders\LandingSeeder;
@@ -101,6 +102,16 @@ class CoursePlayerTest extends TestCase
         $student->completedLessons()->attach($this->quiz);
         $this->actingAs($student)->post(route('courses.finish', $this->course));
         $this->assertNotNull($student->enrollments()->first()->completed_at);
+    }
+
+    public function test_an_enrolled_student_starts_a_quiz_but_not_a_lesson()
+    {
+        $this->quiz->questions()->create(['type' => 'multiple_choice', 'title' => 'Q', 'options' => ['A', 'B'], 'answer' => [0], 'marks' => 1, 'position' => 1]);
+        $this->actingAs($this->enrolledStudent());
+
+        $this->post(route('courses.learn.quiz', [$this->course, $this->quiz]))
+            ->assertRedirect(route('exams.attempts.show', ExamAttempt::sole()));
+        $this->post(route('courses.learn.quiz', [$this->course, $this->first]))->assertNotFound();
     }
 
     private function enrolledStudent(): User

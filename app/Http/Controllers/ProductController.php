@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         return Inertia::render('store/index', [
             'products' => $products,
-            'categories' => Category::listedFor('products', fn ($query) => $query->published()),
+            'categories' => Category::listedFor('products', 'published'),
             'filters' => $filters,
         ]);
     }
@@ -71,7 +71,7 @@ class ProductController extends Controller
                 ->latest('id')
                 ->take(3)
                 ->get(),
-            'categories' => Category::listedFor('products', fn ($query) => $query->published()),
+            'categories' => Category::listedFor('products', 'published'),
         ]);
     }
 }

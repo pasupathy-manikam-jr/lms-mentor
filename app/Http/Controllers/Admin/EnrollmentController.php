@@ -73,7 +73,7 @@ class EnrollmentController extends Controller
             'item_id.unique' => $scope === 'exam' ? __('This user is already enrolled in this exam.') : __('This user is already enrolled in this course.'),
         ], ['item_id' => $scope === 'exam' ? __('exam') : __('course')]);
 
-        $item = ($scope === 'exam' ? Exam::query() : Course::query())->findOrFail($validated['item_id']);
+        $item = ($scope === 'exam' ? Exam::query() : Course::query())->findOrFail($request->integer('item_id'));
 
         $this->model($scope)::create([
             'user_id' => $validated['user_id'],

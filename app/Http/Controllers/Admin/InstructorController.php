@@ -45,7 +45,7 @@ class InstructorController extends Controller
 
     public function store(InstructorProfileRequest $request): RedirectResponse
     {
-        $user = User::findOrFail($request->validated('user_id'));
+        $user = User::findOrFail($request->integer('user_id'));
 
         $user->instructor()->create([...$request->profile(), 'name' => $user->name, 'status' => 'approved']);
         $user->assignRole(UserRole::Instructor->value);
@@ -120,7 +120,7 @@ class InstructorController extends Controller
 
     public function resume(Instructor $instructor): StreamedResponse
     {
-        abort_unless($instructor->resume_path, 404);
+        abort_unless($instructor->resume_path !== null, 404);
 
         return Storage::disk('local')->download($instructor->resume_path, $instructor->resume_name);
     }

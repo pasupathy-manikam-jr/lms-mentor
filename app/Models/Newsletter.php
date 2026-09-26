@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use InvalidArgumentException;
 
 /**
  * A newsletter email written in the admin and sent to one audience.
@@ -15,7 +16,7 @@ use Illuminate\Support\Collection;
  * @property string $body Sanitized rich-text HTML.
  * @property string|null $audience subscribers|students|users
  * @property int $recipients_count
- * @property Carbon|null $sent_at
+ * @property CarbonImmutable|null $sent_at
  */
 #[Fillable(['subject', 'body', 'audience', 'recipients_count', 'sent_at'])]
 class Newsletter extends Model
@@ -37,7 +38,7 @@ class Newsletter extends Model
     /**
      * The email addresses in an audience, without anyone who unsubscribed.
      *
-     * @return Collection<int, string>
+     * @return Collection<int, lowercase-string>
      */
     public static function recipients(string $audience): Collection
     {
@@ -47,8 +48,9 @@ class Newsletter extends Model
             'subscribers' => NewsletterSubscriber::whereNull('unsubscribed_at')->pluck('email'),
             'students' => User::role('student')->whereNotIn('email', $optedOut)->pluck('email'),
             'users' => User::whereNotIn('email', $optedOut)->pluck('email'),
+            default => throw new InvalidArgumentException("Unknown newsletter audience [{$audience}]."),
         };
 
-        return $emails->map(fn (string $email) => strtolower($email))->unique()->values();
+        return $emails->map(fn (string $email): string => strtolower($email))->unique()->values();
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * A user's enrolment in an exam.
@@ -14,7 +14,7 @@ use Illuminate\Support\Carbon;
  * @property int $user_id
  * @property int $exam_id
  * @property string $price_paid What the user paid; 0 for free enrolments.
- * @property Carbon|null $expires_at Null for lifetime access.
+ * @property CarbonImmutable|null $expires_at Null for lifetime access.
  */
 #[Fillable(['user_id', 'exam_id', 'price_paid', 'expires_at'])]
 class ExamEnrollment extends Model

@@ -82,7 +82,7 @@ class ExamAttemptController extends Controller
             }
         }
 
-        $attempt->marks = collect($attempt->marks)->replace(collect($marks)->map(fn ($value) => (float) $value)->all())->all();
+        $attempt->marks = array_replace($attempt->marks ?? [], array_map(floatval(...), $marks));
         $attempt->finish();
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Marks saved.')]);

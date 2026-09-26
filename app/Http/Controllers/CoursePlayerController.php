@@ -148,14 +148,14 @@ class CoursePlayerController extends Controller
         abort_unless($enrollment || $request->user()->isAdmin(), 404);
 
         $template = CertificateTemplate::activeFor('certificate', 'course');
-        abort_unless($template, 404);
+        abort_unless($template !== null, 404);
 
         return Inertia::render('courses/certificate', [
             'template' => $template->only(['design', 'colors', 'content']),
             'data' => [
                 'recipient' => $request->user()->name,
                 'course' => $course->title,
-                'date' => ($enrollment?->completed_at ?? now())->locale(app()->getLocale())->isoFormat('LL'),
+                'date' => ($enrollment->completed_at ?? now())->settings(['locale' => app()->getLocale()])->isoFormat('LL'),
             ],
             'courseUrl' => route('courses.show', $course),
         ]);

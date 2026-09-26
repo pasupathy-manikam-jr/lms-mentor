@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Instructor;
 use App\Models\Page;
 use Inertia\Inertia;
@@ -42,7 +43,7 @@ class TeamController extends Controller
                 'reviews' => $reviews,
                 // Weighted by review count, so a course with more reviews counts for more.
                 'rating' => $reviews > 0
-                    ? round($courses->sum(fn ($course) => $course->rating * $course->reviews_count) / $reviews, 1)
+                    ? round($courses->sum(fn (Course $course) => (float) $course->rating * $course->reviews_count) / $reviews, 1)
                     : null,
             ],
         ]);

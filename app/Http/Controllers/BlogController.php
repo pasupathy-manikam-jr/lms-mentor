@@ -59,6 +59,6 @@ class BlogController extends Controller
      */
     private function categories(): Collection
     {
-        return Category::listedFor('posts', fn ($query) => $query->published());
+        return Category::listedFor('posts', 'published');
     }
 }

@@ -38,7 +38,7 @@ class CourseController extends Controller
 
         return Inertia::render('courses/index', [
             'courses' => $courses,
-            'categories' => Category::listedFor('courses', fn ($query) => $query->approved()),
+            'categories' => Category::listedFor('courses', 'approved'),
             'filters' => $filters,
         ]);
     }
@@ -68,7 +68,7 @@ class CourseController extends Controller
                 ->orderBy('id')
                 ->take(3)
                 ->get(),
-            'categories' => Category::listedFor('courses', fn ($query) => $query->approved()),
+            'categories' => Category::listedFor('courses', 'approved'),
         ]);
     }
 }

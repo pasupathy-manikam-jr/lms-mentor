@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Support\PublicUpload;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class EditorImageController extends Controller
 {
@@ -18,8 +18,6 @@ class EditorImageController extends Controller
             'image' => ['required', 'image', 'max:4096'],
         ]);
 
-        $path = $request->file('image')->store('editor', 'public');
-
-        return response()->json(['url' => Storage::disk('public')->url($path)]);
+        return response()->json(['url' => PublicUpload::url($request->file('image'), 'editor')]);
     }
 }

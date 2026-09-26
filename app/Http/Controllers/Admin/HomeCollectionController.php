@@ -22,7 +22,7 @@ class HomeCollectionController extends Controller
 {
     public function index(): Response
     {
-        $collections = Page::firstWhere('slug', 'home')?->collections ?? [];
+        $collections = Page::firstWhere('slug', 'home')->collections ?? [];
 
         return Inertia::render('admin/pages/collections', [
             'courses' => Course::approved()->orderBy('title')->get(['id', 'title', 'image_url', 'is_popular']),

@@ -161,7 +161,8 @@ class LanguageController extends Controller
      */
     private function sourceKeys(): array
     {
-        return once(fn () => array_keys(json_decode((string) file_get_contents(lang_path('ms.json')), true) ?? []));
+        // A numeric key ("404") comes back from array_keys() as an int.
+        return once(fn () => array_map(strval(...), array_keys(json_decode((string) file_get_contents(lang_path('ms.json')), true) ?? [])));
     }
 
     private function done(string $message): RedirectResponse

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Support\ContentOwner;
 use App\Support\HtmlSanitizer;
+use App\Support\PublicUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -118,12 +119,12 @@ class BlogController extends Controller
             'excerpt' => Str::limit($text, 200),
             'read_minutes' => max(1, (int) ceil(str_word_count($text) / 200)),
             // Keep the original date when an already published post is saved again.
-            'published_at' => $isPublished ? ($post?->published_at ?? now()) : null,
+            'published_at' => $isPublished ? ($post->published_at ?? now()) : null,
         ];
 
         foreach (['thumbnail' => 'image_url', 'banner' => 'banner_url'] as $field => $column) {
             if ($request->hasFile($field)) {
-                $attributes[$column] = Storage::disk('public')->url($request->file($field)->store('posts', 'public'));
+                $attributes[$column] = PublicUpload::url($request->file($field), 'posts');
             } elseif ($request->boolean("remove_{$field}")) {
                 $attributes[$column] = null;
             }

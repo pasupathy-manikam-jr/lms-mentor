@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
@@ -21,7 +21,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $banner_url Shown at the top of the post; falls back to the thumbnail.
  * @property string $author_name
  * @property int $read_minutes
- * @property Carbon|null $published_at
+ * @property CarbonImmutable|null $published_at
  */
 #[Fillable(['user_id', 'category_id', 'title', 'slug', 'excerpt', 'keywords', 'body', 'image_url', 'banner_url', 'author_name', 'read_minutes', 'published_at'])]
 class Post extends Model

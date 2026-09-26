@@ -48,7 +48,7 @@ class NewsletterController extends Controller
 
     public function update(Request $request, Newsletter $newsletter, HtmlSanitizer $sanitizer): RedirectResponse
     {
-        abort_if($newsletter->sent_at, 403);
+        abort_if($newsletter->sent_at !== null, 403);
 
         $newsletter->update($this->validated($request, $sanitizer));
 
@@ -60,7 +60,7 @@ class NewsletterController extends Controller
      */
     public function send(Request $request, Newsletter $newsletter): RedirectResponse
     {
-        abort_if($newsletter->sent_at, 403);
+        abort_if($newsletter->sent_at !== null, 403);
 
         $audience = $request->validate(['audience' => ['required', Rule::in(Newsletter::AUDIENCES)]])['audience'];
         $recipients = Newsletter::recipients($audience);

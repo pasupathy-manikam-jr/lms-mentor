@@ -7,10 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreCourseRequest;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\CourseSection;
 use App\Models\Instructor;
 use App\Models\Lesson;
+use App\Models\LessonResource;
 use App\Support\ContentOwner;
 use App\Support\HtmlSanitizer;
+use App\Support\PublicUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -101,18 +104,18 @@ class CourseController extends Controller
             'sections' => $course->sections()
                 ->with(['lessons:id,course_section_id,type,content_type,source,body,description,title,duration_minutes,time_limit_seconds,total_mark,pass_mark,retake_attempts,position', 'lessons.resources'])
                 ->get(['id', 'course_id', 'title', 'position'])
-                ->each(fn ($section) => $section->lessons->transform(fn (Lesson $lesson) => [
+                ->each(fn (CourseSection $section) => $section->setRelation('lessons', $section->lessons->map(fn (Lesson $lesson): array => [
                     ...$lesson->only(['id', 'type', 'content_type', 'title', 'duration_minutes', 'description', 'time_limit_seconds', 'total_mark', 'pass_mark', 'retake_attempts']),
                     'body' => $lesson->body ?? '',
                     // Private file paths stay on the server; the form only needs to know a file exists.
                     'url' => $lesson->hasFile() ? null : $lesson->source,
                     'has_file' => $lesson->hasFile(),
-                    'resources' => $lesson->resources->map(fn ($resource) => [
+                    'resources' => $lesson->resources->map(fn (LessonResource $resource): array => [
                         ...$resource->only(['id', 'title', 'type']),
                         // Only links expose their target; files stay private.
                         'url' => $resource->isFile() ? null : $resource->resource,
                     ]),
-                ])),
+                ]))),
             'course' => [
                 'id' => $course->id,
                 'title' => $course->title,
@@ -213,7 +216,7 @@ class CourseController extends Controller
 
         foreach (['thumbnail' => 'image_url', 'banner' => 'banner_url'] as $input => $column) {
             if ($request->hasFile($input)) {
-                $media[$column] = Storage::disk('public')->url($request->file($input)->store('courses', 'public'));
+                $media[$column] = PublicUpload::url($request->file($input), 'courses');
             } elseif ($request->boolean("remove_{$input}") || ! $course) {
                 $media[$column] = null;
             }
@@ -231,7 +234,7 @@ class CourseController extends Controller
         $source = match ($type) {
             'video_url' => $request->validated('preview_url'),
             'video' => $request->hasFile('preview_file')
-                ? Storage::disk('public')->url($request->file('preview_file')->store('courses/previews', 'public'))
+                ? PublicUpload::url($request->file('preview_file'), 'courses/previews')
                 : ($course?->preview_type === 'video' ? $course->preview_source : null),
             default => null,
         };

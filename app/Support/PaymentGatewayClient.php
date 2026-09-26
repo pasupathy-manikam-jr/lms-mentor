@@ -25,7 +25,7 @@ class PaymentGatewayClient
      */
     public function start(PaymentGateway $gateway, Payment $payment, string $returnUrl, string $cancelUrl): string
     {
-        $title = Str::limit((string) $payment->payable->title, 100, '');
+        $title = Str::limit((string) $payment->item()->title, 100, '');
 
         return match ($gateway->key) {
             'stripe' => $this->startStripe($gateway, $payment, $title, $returnUrl, $cancelUrl),
@@ -142,7 +142,7 @@ class PaymentGatewayClient
 
         $payment->update(['transaction_id' => $order['id']]);
 
-        return collect($order['links'] ?? [])->firstWhere('rel', 'approve')['href']
+        return collect((array) ($order['links'] ?? []))->firstWhere('rel', 'approve')['href']
             ?? throw new RuntimeException('PayPal did not return an approval link.');
     }
 

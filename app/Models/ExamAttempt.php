@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use App\Enums\QuestionType;
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Random\Engine\Mt19937;
+use Random\Randomizer;
 
 /**
  * One attempt at an exam or at a course quiz (lesson_id). Answers are graded on submit; short answers
@@ -18,11 +20,11 @@ use Illuminate\Support\Collection;
  * @property int $user_id
  * @property int|null $exam_id
  * @property int|null $lesson_id
- * @property Carbon $started_at
- * @property Carbon $ends_at
- * @property Carbon|null $submitted_at
- * @property array<string, mixed>|null $answers
- * @property array<string, float|null>|null $marks
+ * @property CarbonImmutable $started_at
+ * @property CarbonImmutable $ends_at
+ * @property CarbonImmutable|null $submitted_at
+ * @property array<int, mixed>|null $answers Keyed by question id.
+ * @property array<int, float|null>|null $marks Keyed by question id.
  * @property string|null $score
  * @property string $total_marks
  * @property bool $needs_review
@@ -94,7 +96,7 @@ class ExamAttempt extends Model
     /**
      * Save the answers and grade them. Short answers get null marks and put the attempt up for review.
      *
-     * @param  array<string, mixed>  $answers
+     * @param  array<int, mixed>  $answers  Keyed by question id.
      */
     public function submit(array $answers): void
     {
@@ -104,7 +106,7 @@ class ExamAttempt extends Model
         ])->all();
 
         $this->fill([
-            'answers' => collect($answers)->only($questions->pluck('id')->map(fn ($id) => (string) $id)->all())->all(),
+            'answers' => collect($answers)->only($questions->pluck('id')->all())->all(),
             'marks' => $marks,
             'submitted_at' => now(),
             'total_marks' => $questions->sum(fn (ExamQuestion $question) => (float) $question->marks),
@@ -171,11 +173,11 @@ class ExamAttempt extends Model
      * The exam's questions as the student sees them: no answers, and ordering and matching items
      * shuffled the same way every time for this attempt.
      *
-     * @return Collection<int, array<string, mixed>>
+     * @return array<int, array<string, mixed>>
      */
-    public function questionsForStudent(): Collection
+    public function questionsForStudent(): array
     {
-        return $this->source()->questions()->get()->map(fn (ExamQuestion $question) => [
+        return $this->source()->questions()->get()->map(fn (ExamQuestion $question): array => [
             'id' => $question->id,
             'type' => $question->type->value,
             'title' => $question->title,
@@ -183,12 +185,24 @@ class ExamAttempt extends Model
             'marks' => (float) $question->marks,
             'options' => $question->type->hasOptions() ? $question->options : null,
             'items' => $question->type === QuestionType::Ordering
-                ? collect($question->answer)->shuffle($this->id * 7919 + $question->id)->values()->all()
+                ? self::seededShuffle(collect($question->answer)->all(), $this->id * 7919 + $question->id)
                 : null,
             'left' => $question->type === QuestionType::Matching ? collect($question->answer)->pluck('left')->all() : null,
             'right' => $question->type === QuestionType::Matching
-                ? collect($question->answer)->pluck('right')->shuffle($this->id * 104729 + $question->id)->values()->all()
+                ? self::seededShuffle(collect($question->answer)->pluck('right')->all(), $this->id * 104729 + $question->id)
                 : null,
-        ]);
+        ])->all();
+    }
+
+    /**
+     * The same order for the same seed, so a reload shows the items as before. Collection::shuffle()
+     * takes no seed.
+     *
+     * @param  array<int, mixed>  $items
+     * @return list<mixed>
+     */
+    private static function seededShuffle(array $items, int $seed): array
+    {
+        return (new Randomizer(new Mt19937($seed)))->shuffleArray(array_values($items));
     }
 }

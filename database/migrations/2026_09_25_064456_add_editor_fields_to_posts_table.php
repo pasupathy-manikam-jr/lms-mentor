@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 /**
  * The admin blog editor (following the Mentor demo): keywords, a banner, and a rich-text body. Existing
@@ -19,7 +20,7 @@ return new class extends Migration
         });
 
         DB::table('posts')->whereNotNull('body')->lazyById()->each(fn (object $post) => DB::table('posts')->where('id', $post->id)->update([
-            'body' => collect(preg_split('/\n\s*\n/', trim($post->body)))
+            'body' => Str::of($post->body)->trim()->split('/\n\s*\n/')
                 ->map(fn (string $paragraph) => '<p>'.e(trim($paragraph)).'</p>')
                 ->implode(''),
         ]));

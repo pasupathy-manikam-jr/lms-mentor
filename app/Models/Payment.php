@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Storage;
  * @property string $method stripe|paypal|toyyibpay|offline
  * @property string|null $transaction_id
  * @property string $status pending|paid|rejected
- * @property Carbon|null $paid_on
+ * @property CarbonImmutable|null $paid_on
  * @property string|null $proof_path
  * @property string|null $note
  */
@@ -65,8 +66,9 @@ class Payment extends Model
         DB::transaction(function () {
             $this->update(['status' => 'paid']);
             // Enrolments record the site-currency price after any coupon, whatever currency the gateway charged in.
-            $price = (float) $this->payable->price;
-            static::grant($this->user, $this->payable, $price - (float) $this->discount, (float) $this->discount);
+            $item = $this->item();
+            $price = (float) $item->price;
+            static::grant($this->user, $item, $price - (float) $this->discount, (float) $this->discount);
         });
     }
 
@@ -113,6 +115,21 @@ class Payment extends Model
     }
 
     /**
+     * The course, exam or product paid for. The payable has no foreign key, so it can be deleted while
+     * its payments remain: that is a 404, not a type error.
+     */
+    public function item(): Course|Exam|Product
+    {
+        $item = $this->payable;
+
+        if ($item instanceof Course || $item instanceof Exam || $item instanceof Product) {
+            return $item;
+        }
+
+        throw new ModelNotFoundException("The {$this->payable_type} this payment is for no longer exists.");
+    }
+
+    /**
      * @return BelongsTo<User, $this>
      */
     public function user(): BelongsTo
@@ -121,7 +138,7 @@ class Payment extends Model
     }
 
     /**
-     * The course, exam or product paid for.
+     * The course, exam or product paid for. Null once that item is deleted; see item().
      *
      * @return MorphTo<Model, $this>
      */

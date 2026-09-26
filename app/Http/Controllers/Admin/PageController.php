@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Support\HtmlSanitizer;
+use App\Support\PublicUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -158,7 +159,7 @@ class PageController extends Controller
         ];
 
         if ($request->hasFile('og_image')) {
-            $attributes['og_image_url'] = Storage::disk('public')->url($request->file('og_image')->store('pages', 'public'));
+            $attributes['og_image_url'] = PublicUpload::url($request->file('og_image'), 'pages');
         } elseif ($request->boolean('remove_og_image')) {
             $attributes['og_image_url'] = null;
         }

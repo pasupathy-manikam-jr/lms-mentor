@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\LessonType;
 use App\Http\Controllers\Admin\Concerns\ManagesQuestions;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
@@ -24,7 +25,7 @@ class QuizQuestionController extends Controller
 
     public function index(Course $course, Lesson $lesson): Response
     {
-        abort_unless($lesson->type === 'quiz', 404);
+        abort_unless($lesson->type === LessonType::Quiz, 404);
 
         return Inertia::render('admin/courses/quiz-questions', [
             'course' => $course->only(['id', 'title']),
@@ -35,7 +36,7 @@ class QuizQuestionController extends Controller
 
     public function store(Request $request, Course $course, Lesson $lesson): RedirectResponse
     {
-        abort_unless($lesson->type === 'quiz', 404);
+        abort_unless($lesson->type === LessonType::Quiz, 404);
 
         $lesson->questions()->create([
             ...$this->validated($request),

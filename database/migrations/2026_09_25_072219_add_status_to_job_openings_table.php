@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 /**
  * Job Circulars admin (following the Mentor demo): a draft/active/closed status, and a rich-text
@@ -18,7 +19,7 @@ return new class extends Migration
         });
 
         DB::table('job_openings')->lazyById()->each(fn (object $job) => DB::table('job_openings')->where('id', $job->id)->update([
-            'description' => collect(preg_split('/\n\s*\n/', trim($job->description)))
+            'description' => Str::of($job->description)->trim()->split('/\n\s*\n/')
                 ->map(fn (string $paragraph) => '<p>'.e(trim($paragraph)).'</p>')
                 ->implode(''),
         ]));
