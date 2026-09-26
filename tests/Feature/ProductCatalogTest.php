@@ -57,7 +57,7 @@ class ProductCatalogTest extends TestCase
             ->assertInertia(fn (Assert $page) => $page
                 ->component('store/show')
                 ->where('product.type', 'Flashcards')
-                ->where('product.image_url', '/images/courses/clinical-pharmacology-basics.webp')
+                ->where('product.image_url', asset('images/courses/clinical-pharmacology-basics.webp'))
                 ->where('product.instructor.name', 'Dr. Marcus Bell')
                 ->where('product.category.slug', 'pharmacology'));
     }

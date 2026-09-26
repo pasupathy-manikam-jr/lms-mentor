@@ -53,7 +53,7 @@ class ExamSeeder extends Seeder
                 'title' => $title,
                 'level' => $level,
                 'short_description' => $description,
-                'image_url' => file_exists(public_path($image)) ? "/{$image}" : null,
+                'image_url' => file_exists(public_path($image)) ? asset($image) : null,
                 'price' => $price,
                 'compare_at_price' => $compareAt,
                 'duration_minutes' => $minutes,

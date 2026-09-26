@@ -56,7 +56,7 @@ class ProductSeeder extends Seeder
                 'type' => $type,
                 'format' => $format,
                 'summary' => $description,
-                'image_url' => file_exists(public_path($image)) ? "/{$image}" : null,
+                'image_url' => file_exists(public_path($image)) ? asset($image) : null,
                 'price' => $price,
                 'compare_at_price' => $compareAt,
                 'sales_count' => $sales,
