@@ -1,0 +1,393 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Landing page animations: motion-safe:animate-float (hero cards) and motion-safe:animate-marquee (partner strip). */
+@theme {
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-marquee: marquee 40s linear infinite;
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/* Landing page scroll reveal: [data-reveal] sections fade up, and cards in their grids follow one by one. */
+@media (prefers-reduced-motion: no-preference) {
+    [data-reveal],
+    [data-reveal] .grid > * {
+        --reveal-delay: calc(var(--reveal-index, 0) * 100ms);
+        opacity: 0;
+        transform: translateY(3rem);
+        /* The delay applies only to the reveal, so hover lift and shadow stay instant. */
+        transition:
+            opacity 0.8s ease-out var(--reveal-delay),
+            transform 0.8s ease-out var(--reveal-delay),
+            translate 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    [data-reveal='shown'],
+    [data-reveal='shown'] .grid > * {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/*
+ * Settings panel customizer (hooks/use-customization.ts). Colour presets swap the primary and ring colours;
+ * each preset has its own light and dark steps. Neutral is the kit default, so it needs no block.
+ */
+html[data-theme-color='amber'] {
+    --primary: oklch(0.769 0.188 70.08);
+    --primary-foreground: oklch(0.279 0.077 45.635);
+    --ring: oklch(0.769 0.188 70.08);
+    --sidebar-primary: oklch(0.769 0.188 70.08);
+    --sidebar-primary-foreground: oklch(0.279 0.077 45.635);
+    --sidebar-ring: oklch(0.769 0.188 70.08);
+}
+
+html[data-theme-color='emerald'] {
+    --primary: oklch(0.596 0.145 163.225);
+    --primary-foreground: oklch(0.979 0.021 166.113);
+    --ring: oklch(0.596 0.145 163.225);
+    --sidebar-primary: oklch(0.596 0.145 163.225);
+    --sidebar-primary-foreground: oklch(0.979 0.021 166.113);
+    --sidebar-ring: oklch(0.596 0.145 163.225);
+}
+
+html.dark[data-theme-color='emerald'] {
+    --primary: oklch(0.696 0.17 162.48);
+    --primary-foreground: oklch(0.262 0.051 172.552);
+    --ring: oklch(0.696 0.17 162.48);
+    --sidebar-primary: oklch(0.696 0.17 162.48);
+    --sidebar-primary-foreground: oklch(0.262 0.051 172.552);
+    --sidebar-ring: oklch(0.696 0.17 162.48);
+}
+
+html[data-theme-color='blue'] {
+    --primary: oklch(0.546 0.245 262.881);
+    --primary-foreground: oklch(0.97 0.014 254.604);
+    --ring: oklch(0.546 0.245 262.881);
+    --sidebar-primary: oklch(0.546 0.245 262.881);
+    --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
+    --sidebar-ring: oklch(0.546 0.245 262.881);
+}
+
+html.dark[data-theme-color='blue'] {
+    --primary: oklch(0.623 0.214 259.815);
+    --ring: oklch(0.623 0.214 259.815);
+    --sidebar-primary: oklch(0.623 0.214 259.815);
+    --sidebar-ring: oklch(0.623 0.214 259.815);
+}
+
+html[data-theme-color='rose'] {
+    --primary: oklch(0.586 0.253 17.585);
+    --primary-foreground: oklch(0.969 0.015 12.422);
+    --ring: oklch(0.586 0.253 17.585);
+    --sidebar-primary: oklch(0.586 0.253 17.585);
+    --sidebar-primary-foreground: oklch(0.969 0.015 12.422);
+    --sidebar-ring: oklch(0.586 0.253 17.585);
+}
+
+html.dark[data-theme-color='rose'] {
+    --primary: oklch(0.645 0.246 16.439);
+    --ring: oklch(0.645 0.246 16.439);
+    --sidebar-primary: oklch(0.645 0.246 16.439);
+    --sidebar-ring: oklch(0.645 0.246 16.439);
+}
+
+html[data-theme-color='violet'] {
+    --primary: oklch(0.541 0.281 293.009);
+    --primary-foreground: oklch(0.969 0.016 293.756);
+    --ring: oklch(0.541 0.281 293.009);
+    --sidebar-primary: oklch(0.541 0.281 293.009);
+    --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+    --sidebar-ring: oklch(0.541 0.281 293.009);
+}
+
+html.dark[data-theme-color='violet'] {
+    --primary: oklch(0.606 0.25 292.717);
+    --ring: oklch(0.606 0.25 292.717);
+    --sidebar-primary: oklch(0.606 0.25 292.717);
+    --sidebar-ring: oklch(0.606 0.25 292.717);
+}
+
+html[data-font='inter'] {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html[data-font='poppins'] {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Dashboard chart series colours: the dataviz reference categorical palette (slots 1-5, validated for adjacent
+ * marks such as pie slices), with separate steps for the dark surface. Slots 3-5 are under 3:1 on light, so every
+ * chart that uses them also shows labelled values.
+ */
+:root {
+    --viz-1: #2a78d6;
+    --viz-2: #eb6834;
+    --viz-3: #1baf7a;
+    --viz-4: #eda100;
+    --viz-5: #e87ba4;
+}
+
+.dark {
+    --viz-1: #3987e5;
+    --viz-2: #d95926;
+    --viz-3: #199e70;
+    --viz-4: #c98500;
+    --viz-5: #d55181;
+}
+
+/* Rich text: the course editor (Tiptap) and the HTML it produces wherever it is shown. */
+@layer components {
+    .rich-text {
+        @apply text-sm leading-relaxed;
+
+        & > * + * {
+            @apply mt-3;
+        }
+
+        & h1 {
+            @apply text-2xl font-bold;
+        }
+
+        & h2 {
+            @apply text-xl font-semibold;
+        }
+
+        & h3 {
+            @apply text-lg font-semibold;
+        }
+
+        & h4 {
+            @apply text-base font-semibold;
+        }
+
+        & ul {
+            @apply list-disc ps-6;
+        }
+
+        & ol {
+            @apply list-decimal ps-6;
+        }
+
+        & li > p {
+            @apply m-0;
+        }
+
+        & a {
+            @apply text-primary underline underline-offset-2;
+        }
+
+        & blockquote {
+            @apply border-s-4 ps-4 text-muted-foreground italic;
+        }
+
+        & code {
+            @apply rounded bg-muted px-1 py-0.5 font-mono text-[0.85em];
+        }
+
+        & pre {
+            @apply overflow-x-auto rounded-lg bg-muted p-4;
+
+            & code {
+                @apply bg-transparent p-0;
+            }
+        }
+
+        & mark {
+            @apply rounded-sm px-0.5 text-inherit;
+        }
+
+        & img {
+            @apply h-auto max-w-full rounded-lg;
+        }
+
+        & img.ProseMirror-selectednode {
+            @apply ring-2 ring-ring;
+        }
+
+        & div[data-youtube-video] iframe {
+            @apply aspect-video h-auto w-full max-w-2xl rounded-lg;
+        }
+
+        & table {
+            @apply w-full table-fixed border-collapse;
+        }
+
+        & th,
+        & td {
+            @apply border px-3 py-2 text-start align-top;
+        }
+
+        & th {
+            @apply bg-muted font-semibold;
+        }
+
+        & .selectedCell {
+            @apply bg-primary/10;
+        }
+
+        & p.is-editor-empty:first-child::before {
+            @apply pointer-events-none float-left h-0 text-muted-foreground;
+            content: attr(data-placeholder);
+        }
+    }
+}

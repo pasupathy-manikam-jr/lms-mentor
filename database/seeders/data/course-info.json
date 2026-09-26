@@ -1,0 +1,509 @@
+{
+    "Principles of Management: Planning, Organising & Leading": {
+        "faqs": [
+            {
+                "question": "Do I need any prior management experience?",
+                "answer": "No. The course starts from the basics and uses everyday workplace examples, including from healthcare settings."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 70 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "New and aspiring supervisors, health professionals moving into management roles and students of business or health administration."
+            }
+        ],
+        "requirements": [
+            "No prior management training is needed",
+            "Basic reading comprehension in English",
+            "Interest in how teams and organisations are run"
+        ],
+        "outcomes": [
+            "Explain the four functions of management and the difference between efficiency and effectiveness",
+            "Describe Mintzberg's managerial roles and the skills managers need at each level",
+            "Set clear goals and outline a simple plan to achieve them",
+            "Compare common organisational structures and when each is useful",
+            "Recognise key approaches to leading and motivating people"
+        ]
+    },
+    "Operations Research for Managers": {
+        "faqs": [
+            {
+                "question": "How much maths do I need?",
+                "answer": "Comfort with school-level algebra and basic arithmetic is enough; the course focuses on setting up models and interpreting results."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 77 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Managers, administrators and students who want to use quantitative methods to support planning and resource decisions."
+            }
+        ],
+        "requirements": [
+            "School-level algebra and arithmetic",
+            "A calculator or spreadsheet for practice examples",
+            "No prior operations research knowledge is needed"
+        ],
+        "outcomes": [
+            "Describe the operations research modelling process from problem definition to implementation",
+            "Formulate a linear programme with decision variables, an objective and constraints",
+            "Calculate an economic order quantity and explain inventory trade-offs",
+            "Interpret basic queuing measures such as arrival rate, service rate and utilisation",
+            "Identify the critical path of a project using CPM and PERT"
+        ]
+    },
+    "Foundations of Ayurveda: Doshas, Dhatus & Prakriti": {
+        "faqs": [
+            {
+                "question": "Do I need a medical or Ayurveda background?",
+                "answer": "No. The course introduces Ayurvedic concepts from the beginning and explains Sanskrit terms as they appear."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 70 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Will this course teach me to diagnose or treat people?",
+                "answer": "No. The course is educational and describes the tradition's concepts; it is not a substitute for advice from a qualified medical practitioner."
+            }
+        ],
+        "requirements": [
+            "No prior knowledge of Ayurveda is needed",
+            "Interest in traditional Indian systems of medicine",
+            "Willingness to learn some Sanskrit terminology"
+        ],
+        "outcomes": [
+            "Explain the aims of Ayurveda, its classical texts and the five elements",
+            "Describe the qualities and functions of Vata, Pitta and Kapha",
+            "Name the seven dhatus and the malas as described in classical Ayurveda",
+            "Explain the concepts of agni and ama in the Ayurvedic tradition",
+            "Distinguish between prakriti and vikriti"
+        ]
+    },
+    "Introduction to Siddha Medicine: Principles & History": {
+        "faqs": [
+            {
+                "question": "Do I need to know Tamil or have a medical background?",
+                "answer": "No. Key Tamil terms are explained in English as they come up, and no clinical background is assumed."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 59 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Is this course medical advice?",
+                "answer": "No. The course is educational and describes the tradition's concepts; it is not a substitute for advice from a qualified medical practitioner."
+            }
+        ],
+        "requirements": [
+            "No prior knowledge of Siddha medicine is needed",
+            "Interest in Tamil and Indian traditional knowledge systems",
+            "Willingness to learn some Tamil terminology"
+        ],
+        "outcomes": [
+            "Outline the origins of Siddha medicine and the role of the Siddhars",
+            "Explain the five elements and the concept of the 96 thathuvams",
+            "Describe Vatham, Pitham and Kabam, the three humours of Siddha",
+            "Name the seven udal thathukkal (physical constituents) and their described roles"
+        ]
+    },
+    "Human Anatomy & Physiology Essentials": {
+        "faqs": [
+            {
+                "question": "Do I need a science background?",
+                "answer": "No. Basic school biology helps, but the course introduces anatomical terms and concepts from the start."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 61 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Students entering nursing, allied health or health management, and anyone who wants a clear grounding in how the body works."
+            }
+        ],
+        "requirements": [
+            "Basic school-level biology is helpful but not essential",
+            "No prior medical training is needed",
+            "Interest in how the human body works"
+        ],
+        "outcomes": [
+            "Describe the levels of organisation and the four basic tissue types",
+            "Use directional terms, body planes and the anatomical position correctly",
+            "Explain homeostasis and how negative and positive feedback work",
+            "Trace the flow of blood through the heart and circulation",
+            "Explain how breathing and gas exchange take place in the lungs"
+        ]
+    },
+    "Hospital Administration & Quality Management": {
+        "faqs": [
+            {
+                "question": "Do I need hospital work experience?",
+                "answer": "No, although it helps. The course explains how hospitals are organised before moving on to quality and safety."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 82 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Hospital administrators, clinicians taking on management duties and students of health or hospital administration."
+            }
+        ],
+        "requirements": [
+            "No prior administration experience is needed",
+            "Basic familiarity with healthcare settings is helpful",
+            "Interest in quality and patient safety"
+        ],
+        "outcomes": [
+            "Classify hospitals and describe their governance and departmental structure",
+            "Explain the core functions of hospital administration",
+            "Define healthcare quality and measure it with structure, process and outcome indicators",
+            "Apply quality improvement tools such as the PDCA cycle",
+            "Describe patient safety principles and the role of accreditation"
+        ]
+    },
+    "Clinical Pharmacology Basics": {
+        "faqs": [
+            {
+                "question": "Do I need a pharmacy or medical background?",
+                "answer": "Basic biology is helpful, but the course explains core pharmacology concepts from the start."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 78 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Does the course teach prescribing or dosing?",
+                "answer": "No. It covers principles of how drugs work and medication safety, not prescribing or dosing, which must follow official guidance and qualified clinicians."
+            }
+        ],
+        "requirements": [
+            "Basic biology or anatomy and physiology knowledge is helpful",
+            "No prior pharmacology study is needed",
+            "Interest in how medicines work and are used safely"
+        ],
+        "outcomes": [
+            "Distinguish chemical, generic and brand names and common ways drugs are classified",
+            "Explain absorption, distribution, metabolism and excretion (ADME)",
+            "Describe how drugs act on receptors, including agonists and antagonists",
+            "Recognise types of adverse drug reactions and drug interactions",
+            "Apply the principles of safe medication practice"
+        ]
+    },
+    "Yoga Therapy for Everyday Health": {
+        "faqs": [
+            {
+                "question": "Do I need any yoga experience?",
+                "answer": "No. The practices are gentle and suitable for most beginners, and the course starts with how to practise safely."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 66 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Can yoga replace medical treatment?",
+                "answer": "No. The course is educational and presents yoga as a complementary practice; check with a qualified health professional before starting if you have a health condition."
+            }
+        ],
+        "requirements": [
+            "No prior yoga experience is needed",
+            "A non-slip mat and comfortable clothing for practice",
+            "Medical clearance first if you have a health condition, injury or are pregnant"
+        ],
+        "outcomes": [
+            "Describe the roots of yoga and Patanjali's eight limbs",
+            "Follow general safety guidelines and recognise when to modify or stop a practice",
+            "Perform a simple sequence of gentle asanas with care",
+            "Practise diaphragmatic and alternate nostril breathing",
+            "Use shavasana and a body scan for relaxation and mindful awareness"
+        ]
+    },
+    "Strategic Management & Decision Making": {
+        "faqs": [
+            {
+                "question": "Do I need prior business study?",
+                "answer": "No, though some workplace experience will help you relate the ideas to real organisations."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 83 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Managers, team leaders and students who want to understand how organisations set strategy and make better decisions."
+            }
+        ],
+        "requirements": [
+            "No prior strategy coursework is needed",
+            "Basic arithmetic for expected value calculations",
+            "Some workplace experience is helpful"
+        ],
+        "outcomes": [
+            "Describe the strategic management process and the role of vision, mission and values",
+            "Analyse an organisation's environment using tools such as PESTEL, Five Forces and SWOT",
+            "Compare competitive and corporate-level strategies",
+            "Contrast rational and behavioural models of decision making and common biases",
+            "Build a simple decision tree and calculate expected values"
+        ]
+    },
+    "Healthcare Finance & Insurance Essentials": {
+        "faqs": [
+            {
+                "question": "Do I need an accounting background?",
+                "answer": "No. The course explains financial terms from the start and needs only basic arithmetic."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 61 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Hospital and clinic administrators, billing and insurance staff, and health management students."
+            }
+        ],
+        "requirements": [
+            "Basic arithmetic",
+            "No prior accounting or finance study is needed",
+            "Interest in how healthcare is paid for"
+        ],
+        "outcomes": [
+            "Describe the main sources of healthcare funding and provider payment methods",
+            "Classify fixed, variable, direct and indirect costs and calculate a break-even point",
+            "Explain risk pooling, adverse selection and cost-sharing terms",
+            "Outline the stages of the revenue cycle, from registration to claims and collections"
+        ]
+    },
+    "Medical Terminology for Health Professionals": {
+        "faqs": [
+            {
+                "question": "Do I need to know Latin or Greek?",
+                "answer": "No. The course teaches the common word roots, prefixes and suffixes you need to work out medical terms."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 56 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Who is this course for?",
+                "answer": "Anyone starting out in healthcare, including clinical, administrative, billing and medical records staff."
+            }
+        ],
+        "requirements": [
+            "No prior medical knowledge is needed",
+            "Good reading comprehension in English",
+            "Willingness to practise word parts regularly"
+        ],
+        "outcomes": [
+            "Break medical terms into roots, prefixes, suffixes and combining vowels",
+            "Recognise common prefixes and suffixes and what they mean",
+            "Use key vocabulary across the major body systems",
+            "Identify error-prone abbreviations and follow safe documentation practice"
+        ]
+    },
+    "Dravyaguna: Medicinal Plants in Ayurveda": {
+        "faqs": [
+            {
+                "question": "Do I need to study Ayurveda first?",
+                "answer": "It helps to know the basics of the doshas, but the course explains the key Dravyaguna concepts as it goes."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 61 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Will I learn how to use these plants as remedies?",
+                "answer": "No. The course is educational and describes plants as the tradition does; medicinal plants can interact with medicines, so use them only with qualified advice."
+            }
+        ],
+        "requirements": [
+            "Basic familiarity with Ayurvedic concepts such as the doshas is helpful",
+            "No botany background is needed",
+            "Interest in medicinal plants and traditional knowledge"
+        ],
+        "outcomes": [
+            "Explain the scope of Dravyaguna and the role of classical texts and nighantus",
+            "Describe rasa, guna, virya, vipaka and prabhava",
+            "Summarise how Amalaki and Haridra are described in the Ayurvedic tradition",
+            "Summarise how Guduchi, Ashwagandha and Tulsi are described in the tradition",
+            "Recognise why correct identification and qualified guidance matter"
+        ]
+    },
+    "Ayurvedic Diet & Seasonal Routines (Ritucharya)": {
+        "faqs": [
+            {
+                "question": "Do I need any background in Ayurveda?",
+                "answer": "No. The course explains the relevant Ayurvedic concepts as they come up, though knowing the doshas helps."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 69 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Is this a diet plan for a health condition?",
+                "answer": "No. The course is educational and describes traditional guidance; speak to a qualified health professional before changing your diet for a health reason."
+            }
+        ],
+        "requirements": [
+            "No prior knowledge of Ayurveda is needed",
+            "Interest in food, daily routine and seasonal living",
+            "Basic awareness of the three doshas is helpful"
+        ],
+        "outcomes": [
+            "Describe the Ayurvedic principles of wholesome eating and the daily routine (dinacharya)",
+            "Explain why Ayurveda links the seasons to changes in the doshas and digestion",
+            "Summarise the traditional diet and routine for winter and spring",
+            "Summarise the traditional diet and routine for summer and the monsoon",
+            "Describe the autumn regimen and the guidance for seasonal transitions"
+        ]
+    },
+    "Siddha Diagnosis: Understanding Envagai Thervu": {
+        "faqs": [
+            {
+                "question": "Should I study Siddha principles first?",
+                "answer": "It helps to know the three humours, which are covered in Introduction to Siddha Medicine, but they are briefly revisited here."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 65 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Will this course qualify me to diagnose patients?",
+                "answer": "No. It is educational and explains the tradition's methods; anyone with symptoms should be assessed by a qualified medical professional."
+            }
+        ],
+        "requirements": [
+            "Familiarity with Vatham, Pitham and Kabam is helpful",
+            "No clinical experience is needed",
+            "Interest in traditional diagnostic methods"
+        ],
+        "outcomes": [
+            "Explain the aims of Siddha diagnosis and list the eight components of Envagai Thervu",
+            "Describe how Naadi (pulse) examination is explained in the tradition",
+            "Outline how touch, tongue, colour, voice and eyes are examined",
+            "Describe how stool and urine are examined, including the neikkuri oil-drop test"
+        ]
+    },
+    "Varmam Therapy: An Introduction": {
+        "faqs": [
+            {
+                "question": "Do I need any background in Siddha medicine?",
+                "answer": "No, although an introduction to Siddha principles gives useful context. The course explains Varmam from the beginning."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 56 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Will this course prepare me to practise Varmam?",
+                "answer": "No. It is an educational introduction only; Varmam must be learned under a qualified teacher and is not a substitute for medical care."
+            }
+        ],
+        "requirements": [
+            "No prior knowledge of Varmam is needed",
+            "Interest in Siddha and Tamil traditional knowledge",
+            "Understanding that this course is theory only, not hands-on training"
+        ],
+        "outcomes": [
+            "Explain the meaning, origins and dual martial and therapeutic roles of Varmam",
+            "Describe how Varmam points are classified, including padu and thodu varmam",
+            "Outline the therapeutic techniques described in the tradition",
+            "Explain the safety, training and ethical principles the tradition emphasises"
+        ]
+    },
+    "Clinical Nutrition: Diet Planning for Chronic Conditions": {
+        "faqs": [
+            {
+                "question": "Do I need a nutrition or medical background?",
+                "answer": "Basic biology helps, but the course explains core nutrition concepts from the start."
+            },
+            {
+                "question": "How long does the course take?",
+                "answer": "The lessons add up to about 77 minutes of reading, plus time for the section quizzes. You can study at your own pace."
+            },
+            {
+                "question": "How does the learning work?",
+                "answer": "You work through short text lessons in two sections, and each section ends with a short quiz to check your understanding."
+            },
+            {
+                "question": "Can I use this course to plan my own therapeutic diet?",
+                "answer": "The course teaches general principles only; diet plans for chronic conditions should be individualised by a qualified dietitian or clinician."
+            }
+        ],
+        "requirements": [
+            "Basic biology or health science knowledge is helpful",
+            "No prior nutrition training is needed",
+            "Interest in the role of diet in long-term health"
+        ],
+        "outcomes": [
+            "Explain the role of clinical nutrition and the forms of malnutrition",
+            "Carry out a basic ABCD nutrition assessment, including BMI",
+            "Describe dietary principles that support type 2 diabetes management",
+            "Explain the DASH eating pattern and diet for heart health",
+            "Outline which nutrients are commonly reviewed in chronic kidney disease"
+        ]
+    }
+}
