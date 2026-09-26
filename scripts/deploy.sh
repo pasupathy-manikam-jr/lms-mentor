@@ -4,34 +4,38 @@
 #
 #   Usage:  cd ~/lms-mentor && bash scripts/deploy.sh
 #
-# Pulls the checked-out branch, installs dependencies, migrates, rebuilds the
-# frontend for the /lms-mentor subfolder and refreshes Laravel's caches.
+# Pulls the CI-built `deploy` branch (main + compiled public/build, see
+# .github/workflows/deploy-assets.yml), migrates and refreshes caches.
+# No npm/node on the server.
 #
 set -euo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-# The app is served from a subfolder; building without this breaks every link and image.
-PREFIX="${APP_PATH_PREFIX:-lms-mentor}"
-
-# The default `node` on the box is 20; the build tooling needs 22.
-if [ -x /opt/cpanel/ea-nodejs22/bin/node ]; then
-    export PATH="/opt/cpanel/ea-nodejs22/bin:$PATH"
+# Stash hand-edits instead of silently destroying them with the reset below.
+if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
+    STAMP="pre-deploy-$(date +%Y%m%d-%H%M%S)"
+    echo "==> Local changes found; stashing as '$STAMP'"
+    git stash push -m "$STAMP"
 fi
 
-echo "==> Pulling $(git branch --show-current)"
-# --ff-only: stops instead of merging if someone hand-edited tracked files on the server.
-git pull --ff-only
+echo "==> Fetching deploy branch"
+git fetch origin deploy
+
+# public/build is untracked until the first switch to deploy, which tracks it.
+if [ "$(git branch --show-current)" != "deploy" ]; then
+    rm -rf public/build
+fi
+
+# deploy is force-pushed by CI each build, so reset rather than pull/merge.
+git checkout -B deploy origin/deploy
+git reset --hard origin/deploy
 
 echo "==> Installing PHP dependencies"
 composer install --no-interaction --no-progress --optimize-autoloader
 
 echo "==> Migrating"
 php artisan migrate --force
-
-echo "==> Building frontend for /$PREFIX (node $(node -v))"
-npm ci --no-audit --no-fund
-APP_PATH_PREFIX="$PREFIX" npm run build
 
 echo "==> Refreshing caches"
 php artisan optimize:clear
