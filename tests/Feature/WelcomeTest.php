@@ -12,6 +12,16 @@ class WelcomeTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_landing_page_preload_header_stays_under_the_apache_limit()
+    {
+        $this->seed(LandingSeeder::class);
+
+        $link = (string) $this->get(route('home'))->assertOk()->headers->get('Link');
+
+        // Apache answers an empty 500 when one header passes ~8KB; the list is capped at 30 entries.
+        $this->assertLessThanOrEqual(30, substr_count($link, 'rel="'));
+    }
+
     public function test_landing_page_shows_content_from_the_database()
     {
         $this->seed(LandingSeeder::class);

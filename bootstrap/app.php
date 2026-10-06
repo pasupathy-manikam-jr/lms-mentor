@@ -37,7 +37,9 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleAppearance::class,
             SetLocale::class,
             HandleInertiaRequests::class,
-            AddLinkHeadersForPreloadedAssets::class,
+            // Apache rejects any response header over ~8KB with an empty 500, and the full
+            // preload list outgrew that on the home page. The HTML still preloads every asset.
+            AddLinkHeadersForPreloadedAssets::using(30),
             EnsureUserIsActive::class,
         ]);
     })
