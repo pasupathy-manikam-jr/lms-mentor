@@ -1,4 +1,5 @@
 import { Form, Head } from '@inertiajs/react';
+import { useRef } from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import InputError from '@/components/input-error';
 import PasswordInput from '@/components/password-input';
@@ -7,19 +8,36 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Spinner } from '@/components/ui/spinner';
 import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
 import PasskeyVerify from '@/components/passkey-verify';
 
+type DemoLogin = { name: string; email: string; password: string };
+
 type Props = {
     status?: string;
     canResetPassword: boolean;
+    demoLogins: DemoLogin[];
 };
 
-export default function Login({ status, canResetPassword }: Props) {
+export default function Login({ status, canResetPassword, demoLogins }: Props) {
     const { t } = useTranslation();
+    const emailRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+
+    // The form is uncontrolled, so fill the fields directly.
+    const fill = (email: string) => {
+        const login = demoLogins.find((l) => l.email === email);
+
+        if (login && emailRef.current && passwordRef.current) {
+            emailRef.current.value = login.email;
+            passwordRef.current.value = login.password;
+        }
+    };
+
     return (
         <>
             <Head title={t('Log in')} />
@@ -34,11 +52,41 @@ export default function Login({ status, canResetPassword }: Props) {
                 {({ processing, errors }) => (
                     <>
                         <div className="grid gap-6">
+                            {demoLogins.length > 0 && (
+                                <div className="grid gap-3 rounded-lg border bg-muted/50 p-4">
+                                    <Label id="quick-login">
+                                        {t('Quick login')}
+                                    </Label>
+                                    <RadioGroup
+                                        aria-labelledby="quick-login"
+                                        onValueChange={fill}
+                                    >
+                                        {demoLogins.map((login) => (
+                                            <Label
+                                                key={login.email}
+                                                className="flex cursor-pointer items-center gap-3 font-normal"
+                                            >
+                                                <RadioGroupItem
+                                                    value={login.email}
+                                                />
+                                                <span className="font-medium">
+                                                    {login.name}
+                                                </span>
+                                                <span className="truncate text-muted-foreground">
+                                                    {login.email}
+                                                </span>
+                                            </Label>
+                                        ))}
+                                    </RadioGroup>
+                                </div>
+                            )}
+
                             <div className="grid gap-2">
                                 <Label htmlFor="email">
                                     {t('Email address')}
                                 </Label>
                                 <Input
+                                    ref={emailRef}
                                     id="email"
                                     type="email"
                                     name="email"
@@ -67,6 +115,7 @@ export default function Login({ status, canResetPassword }: Props) {
                                     )}
                                 </div>
                                 <PasswordInput
+                                    ref={passwordRef}
                                     id="password"
                                     name="password"
                                     required

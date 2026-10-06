@@ -41,6 +41,9 @@ return [
 
     'debug' => (bool) env('APP_DEBUG', false),
 
+    // One-click seeded logins on the login page (DatabaseSeeder::LOGINS). Never on a live server.
+    'demo_logins' => (bool) env('DEMO_LOGINS', false),
+
     /*
     |--------------------------------------------------------------------------
     | Application URL

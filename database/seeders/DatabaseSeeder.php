@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
     use WithoutModelEvents;
 
     /**
+     * The demo accounts (admin from AdminSeeder, student from EnrollmentSeeder; the instructor is created
+     * through Admin > Instructors on staging, not seeded). With DEMO_LOGINS=true the login page offers them as
+     * one-click logins, so never enable that flag on a live server.
+     */
+    public const LOGINS = [
+        ['name' => 'Admin', 'email' => 'admin@example.com', 'password' => 'password'],
+        ['name' => 'Instructor', 'email' => 'ananya.rao@example.com', 'password' => 'password'],
+        ['name' => 'Student', 'email' => 'anand.raj@example.com', 'password' => 'password'],
+    ];
+
+    /**
      * Seed the application's database.
      */
     public function run(): void

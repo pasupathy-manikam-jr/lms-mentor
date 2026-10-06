@@ -3,8 +3,11 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
+use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Storage;
+use Inertia\Testing\AssertableInertia as Assert;
 use Laravel\Fortify\Features;
 use Tests\TestCase;
 
@@ -17,6 +20,37 @@ class AuthenticationTest extends TestCase
         $response = $this->get(route('login'));
 
         $response->assertOk();
+    }
+
+    public function test_login_screen_hides_demo_logins_by_default()
+    {
+        config(['app.demo_logins' => false]);
+
+        $this->get(route('login'))->assertInertia(fn (Assert $page) => $page
+            ->where('demoLogins', []));
+    }
+
+    public function test_login_screen_offers_demo_logins_when_enabled()
+    {
+        config(['app.demo_logins' => true]);
+
+        $this->get(route('login'))->assertInertia(fn (Assert $page) => $page
+            ->where('demoLogins', DatabaseSeeder::LOGINS)
+            ->where('demoLogins.0.email', 'admin@example.com'));
+    }
+
+    public function test_seeded_demo_logins_work()
+    {
+        Storage::fake('public');
+        $this->seed(DatabaseSeeder::class);
+
+        // The instructor login is created through the admin panel, not seeded.
+        foreach ([DatabaseSeeder::LOGINS[0], DatabaseSeeder::LOGINS[2]] as $login) {
+            $this->post(route('login.store'), ['email' => $login['email'], 'password' => $login['password']]);
+
+            $this->assertAuthenticated();
+            $this->post(route('logout'));
+        }
     }
 
     public function test_users_can_authenticate_using_the_login_screen()
