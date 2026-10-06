@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      * one-click logins, so never enable that flag on a live server.
      */
     public const LOGINS = [
-        ['name' => 'Admin', 'email' => 'admin@example.com', 'password' => 'password'],
-        ['name' => 'Instructor', 'email' => 'ananya.rao@example.com', 'password' => 'password'],
-        ['name' => 'Student', 'email' => 'anand.raj@example.com', 'password' => 'password'],
+        ['name' => 'Admin', 'email' => 'admin@example.com', 'password' => 'Zx123456'],
+        ['name' => 'Instructor', 'email' => 'ananya.rao@example.com', 'password' => 'Zx123456'],
+        ['name' => 'Student', 'email' => 'anand.raj@example.com', 'password' => 'Zx123456'],
     ];
 
     /**

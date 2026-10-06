@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
  * Sample students with course enrolments (and some exam enrolments) spread over the current year, so the Enrollments list and the dashboard
  * (enrolments, students, admin revenue) have data. The same input always gives the same result, and
  * students that already exist are skipped, so it is safe to run again. Every sample account uses the
- * password "password".
+ * password "Zx123456".
  */
 class EnrollmentSeeder extends Seeder
 {
@@ -56,7 +56,7 @@ class EnrollmentSeeder extends Seeder
             $student = User::forceCreate([
                 'name' => $name,
                 'email' => $email,
-                'password' => 'password',
+                'password' => 'Zx123456',
                 'email_verified_at' => now(),
             ]);
             $student->assignRole(UserRole::Student);

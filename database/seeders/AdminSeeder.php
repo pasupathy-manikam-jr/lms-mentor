@@ -9,7 +9,7 @@ use Illuminate\Database\Seeder;
 class AdminSeeder extends Seeder
 {
     /**
-     * Create the first admin account (admin@example.com / password). Change the password after the first login. Safe to run more than once.
+     * Create the first admin account (admin@example.com / Zx123456). Change the password after the first login. Safe to run more than once.
      */
     public function run(): void
     {
@@ -22,7 +22,7 @@ class AdminSeeder extends Seeder
 
         // Only set a password on creation, so re-seeding never resets a changed one.
         if (! $admin->exists) {
-            $admin->password = 'password';
+            $admin->password = 'Zx123456';
         }
 
         $admin->save();
