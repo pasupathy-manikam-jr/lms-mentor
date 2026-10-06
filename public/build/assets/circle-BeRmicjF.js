@@ -1,0 +1,1 @@
+import{n as e}from"./use-translation-u9ozBLeU.js";var t=e(`Circle`,[[`circle`,{cx:`12`,cy:`12`,r:`10`,key:`1mglay`}]]);export{t};
